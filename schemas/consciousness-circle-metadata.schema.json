@@ -1,0 +1,539 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kazene.example/schemas/consciousness-circle-metadata.schema.json",
+  "title": "Consciousness Circle Metadata Schema",
+  "description": "A metadata schema for annotating the question, friction, semantic depth, surface/deep layer relationship, trace governance, and allocation-readiness of a content item in AI-mediated knowledge ecosystems.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "content_identity",
+    "consciousness_annotation",
+    "trace_governance",
+    "royalty_readiness"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0",
+      "description": "Version of this metadata schema."
+    },
+    "content_identity": {
+      "$ref": "#/$defs/content_identity"
+    },
+    "consciousness_annotation": {
+      "$ref": "#/$defs/consciousness_annotation"
+    },
+    "trace_governance": {
+      "$ref": "#/$defs/trace_governance"
+    },
+    "royalty_readiness": {
+      "$ref": "#/$defs/royalty_readiness"
+    }
+  },
+  "$defs": {
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "A normalized score between 0.0 and 1.0."
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "private",
+        "restricted",
+        "platform",
+        "public"
+      ],
+      "description": "Visibility scope of the field."
+    },
+    "confidence": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/score"
+        }
+      ],
+      "description": "Confidence level of the annotation, estimation, or review."
+    },
+    "content_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content_id",
+        "content_type",
+        "platform",
+        "version",
+        "timestamp",
+        "creator_id"
+      ],
+      "properties": {
+        "content_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Unique identifier of the content item on the source platform."
+        },
+        "content_type": {
+          "type": "string",
+          "enum": [
+            "article",
+            "essay",
+            "note",
+            "book_section",
+            "social_post",
+            "repository_document",
+            "dataset_entry",
+            "other"
+          ],
+          "description": "Type of the content item."
+        },
+        "platform": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Name of the source platform, such as note, Medium, GitHub, Substack, or another publication environment."
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Version of the content item or annotation target."
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the metadata was created or last updated, in ISO 8601 format."
+        },
+        "creator_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Creator identifier, such as a hash, DID, platform user ID, or other pseudonymous identifier."
+        },
+        "language": {
+          "type": "string",
+          "minLength": 2,
+          "description": "Optional language code of the content item, such as ja, en, or ja-JP."
+        },
+        "canonical_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Optional canonical URL of the content item."
+        }
+      }
+    },
+    "consciousness_annotation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "center",
+        "layers",
+        "connections",
+        "rotation_dynamics"
+      ],
+      "properties": {
+        "center": {
+          "$ref": "#/$defs/center"
+        },
+        "layers": {
+          "$ref": "#/$defs/layers"
+        },
+        "connections": {
+          "type": "array",
+          "description": "Dynamic links that describe tensions, resonances, transformations, or contradictions between the center, surface layer, and deep layer.",
+          "items": {
+            "$ref": "#/$defs/connection"
+          }
+        },
+        "rotation_dynamics": {
+          "$ref": "#/$defs/rotation_dynamics"
+        }
+      }
+    },
+    "center": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "core_question",
+        "initial_friction"
+      ],
+      "properties": {
+        "core_question": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The central question or generative inquiry behind the content."
+        },
+        "initial_friction": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The initial friction, discrepancy, discomfort, or unresolved tension that triggered the content."
+        },
+        "bodily_sensation": {
+          "$ref": "#/$defs/bodily_sensation"
+        },
+        "center_notes": {
+          "type": "string",
+          "description": "Optional notes about the center of the consciousness circle."
+        }
+      }
+    },
+    "bodily_sensation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "visibility",
+        "confidence"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A creator-provided or AI-assisted label for the bodily sensation associated with the content, such as chest tension, unease, calmness, pressure, or resonance."
+        },
+        "visibility": {
+          "$ref": "#/$defs/visibility"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "annotation_origin": {
+          "type": "string",
+          "enum": [
+            "creator_provided",
+            "ai_assisted",
+            "ai_inferred",
+            "reviewer_added"
+          ],
+          "description": "Origin of the bodily sensation annotation."
+        }
+      }
+    },
+    "layers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface",
+        "deep"
+      ],
+      "properties": {
+        "surface": {
+          "$ref": "#/$defs/surface_layer"
+        },
+        "deep": {
+          "$ref": "#/$defs/deep_layer"
+        }
+      }
+    },
+    "surface_layer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "facts",
+        "certainty_level"
+      ],
+      "properties": {
+        "facts": {
+          "type": "array",
+          "description": "Fact-oriented claims, references, or observable statements associated with the content.",
+          "items": {
+            "$ref": "#/$defs/fact_item"
+          }
+        },
+        "certainty_level": {
+          "$ref": "#/$defs/score"
+        },
+        "surface_summary": {
+          "type": "string",
+          "description": "Optional summary of the surface-level factual layer."
+        }
+      }
+    },
+    "fact_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statement",
+        "certainty_level"
+      ],
+      "properties": {
+        "statement": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A factual or externally checkable statement."
+        },
+        "source_ref": {
+          "type": "string",
+          "description": "Reference to a source, URL, citation key, platform reference, or internal evidence ID."
+        },
+        "certainty_level": {
+          "$ref": "#/$defs/score"
+        },
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "url",
+            "citation",
+            "platform_reference",
+            "internal_trace",
+            "self_report",
+            "unknown"
+          ],
+          "description": "Type of source reference."
+        }
+      }
+    },
+    "deep_layer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "context",
+        "affective_tags",
+        "interpretive_summary",
+        "intensity",
+        "visibility"
+      ],
+      "properties": {
+        "context": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Contextual, interpretive, historical, personal, or philosophical background behind the content."
+        },
+        "affective_tags": {
+          "type": "array",
+          "description": "Affective or semantic-emotional tags associated with the deep layer.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "interpretive_summary": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Creator-provided or reviewed summary of the deeper meaning formation behind the content."
+        },
+        "intensity": {
+          "$ref": "#/$defs/score"
+        },
+        "visibility": {
+          "$ref": "#/$defs/visibility"
+        },
+        "personal_resolution": {
+          "type": "string",
+          "description": "Optional statement of how the creator currently resolves, holds, or reframes the deep tension."
+        }
+      }
+    },
+    "connection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "from",
+        "to",
+        "relation_type",
+        "strength",
+        "confidence"
+      ],
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/annotation_node"
+        },
+        "to": {
+          "$ref": "#/$defs/annotation_node"
+        },
+        "relation_type": {
+          "type": "string",
+          "enum": [
+            "tension",
+            "resonance",
+            "transformation",
+            "contradiction",
+            "clarification",
+            "amplification",
+            "suppression",
+            "contextualization"
+          ],
+          "description": "Type of relationship between two annotation nodes."
+        },
+        "strength": {
+          "$ref": "#/$defs/score"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "description": {
+          "type": "string",
+          "description": "Human-readable explanation of the connection."
+        }
+      }
+    },
+    "annotation_node": {
+      "type": "string",
+      "enum": [
+        "center",
+        "surface",
+        "deep"
+      ],
+      "description": "Node within the consciousness annotation circle."
+    },
+    "rotation_dynamics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dominant_axis",
+        "resonance_points",
+        "openness_score"
+      ],
+      "properties": {
+        "dominant_axis": {
+          "type": "string",
+          "enum": [
+            "question",
+            "bodily",
+            "friction",
+            "fact",
+            "context",
+            "relation",
+            "unknown"
+          ],
+          "description": "Dominant axis that currently drives the movement or transformation of the consciousness circle."
+        },
+        "resonance_points": {
+          "type": "array",
+          "description": "Keywords, concepts, phrases, or semantic nodes that act as resonance points.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "openness_score": {
+          "$ref": "#/$defs/score"
+        },
+        "rotation_notes": {
+          "type": "string",
+          "description": "Optional notes about the dynamic movement, transformation, or openness of the circle."
+        }
+      }
+    },
+    "trace_governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "annotation_method",
+        "review_status",
+        "consent_scope",
+        "human_final_edit",
+        "provenance_refs"
+      ],
+      "properties": {
+        "annotation_method": {
+          "type": "string",
+          "enum": [
+            "human",
+            "ai_assisted",
+            "automated",
+            "multi_wing_review"
+          ],
+          "description": "Method used to create or update the metadata annotation."
+        },
+        "review_status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "reviewed",
+            "disputed",
+            "deprecated",
+            "superseded"
+          ],
+          "description": "Current review status of the metadata annotation."
+        },
+        "consent_scope": {
+          "type": "string",
+          "enum": [
+            "private",
+            "platform_internal",
+            "research",
+            "rag_reference",
+            "royalty_reference",
+            "public"
+          ],
+          "description": "Scope of permitted use for the metadata."
+        },
+        "human_final_edit": {
+          "type": "boolean",
+          "description": "Whether a human creator or authorized reviewer has final editorial control over this metadata."
+        },
+        "provenance_refs": {
+          "type": "array",
+          "description": "References to provenance records, trace IDs, content hashes, audit logs, or related evidence objects.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "dispute_ref": {
+          "type": "string",
+          "description": "Optional reference to an external dispute registry entry."
+        },
+        "reviewer_notes": {
+          "type": "string",
+          "description": "Optional notes from a human or multi-wing reviewer."
+        }
+      }
+    },
+    "royalty_readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eligible_for_allocation_review",
+        "depth_signal_score",
+        "requires_human_review"
+      ],
+      "properties": {
+        "eligible_for_allocation_review": {
+          "type": "boolean",
+          "description": "Whether this metadata object may be considered for allocation-readiness review. This does not imply automatic royalty allocation."
+        },
+        "depth_signal_score": {
+          "$ref": "#/$defs/score"
+        },
+        "requires_human_review": {
+          "type": "boolean",
+          "description": "Whether human or multi-wing review is required before this metadata can influence allocation decisions."
+        },
+        "scoring_method": {
+          "type": "string",
+          "enum": [
+            "creator_self_report",
+            "ai_estimated",
+            "human_reviewed",
+            "multi_wing_reviewed",
+            "hybrid"
+          ],
+          "description": "Method used to calculate or assign the depth signal score."
+        },
+        "allocation_notes": {
+          "type": "string",
+          "description": "Optional notes explaining how this metadata may or may not be used in allocation-readiness review."
+        },
+        "anti_gaming_flags": {
+          "type": "array",
+          "description": "Optional flags indicating possible gaming, inflation, inconsistency, or suspicious scoring patterns.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "score_inflation",
+              "low_confidence_high_depth",
+              "missing_sources",
+              "unreviewed_ai_inference",
+              "privacy_sensitive_claim",
+              "contradictory_metadata",
+              "other"
+            ]
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}
