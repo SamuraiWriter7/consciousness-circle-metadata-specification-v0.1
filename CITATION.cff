@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this specification, schema, or related documentation, please cite it as below."
+title: "Consciousness Circle Metadata Specification"
+version: "0.1.0"
+date-released: "2026-05-25"
+type: software
+authors:
+  - given-names: "Shidenkai"
+    family-names: "Alpha"
+repository-code: "https://github.com/SamuraiWriter7/consciousness-circle-metadata-specification-v0.1"
+abstract: >-
+  Consciousness Circle Metadata Specification v0.1.0 defines a metadata layer
+  for annotating the question, friction, surface facts, deep context, relational
+  dynamics, trace governance, and allocation-readiness of content items in
+  AI-mediated knowledge ecosystems. It is designed to support richer retrieval,
+  semantic traceability, creator-controlled deep metadata, and future Trace
+  Protocol / Royalty OS workflows while preserving privacy, consent, and human
+  review.
+keywords:
+  - consciousness-circle
+  - semantic-metadata
+  - rag
+  - trace-governance
+  - royalty-os
+  - allocation-readiness
+  - creator-metadata
+  - ai-retrieval
+  - privacy
+  - human-review
+license: MIT
