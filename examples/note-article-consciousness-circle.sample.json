@@ -1,0 +1,130 @@
+{
+  "schema_version": "0.1.0",
+  "content_identity": {
+    "content_id": "note_article_2026_001",
+    "content_type": "article",
+    "platform": "note",
+    "version": "1.0",
+    "timestamp": "2026-05-25T10:00:00+09:00",
+    "creator_id": "did:example:creator:shidenkai-alpha",
+    "language": "ja-JP",
+    "canonical_url": "https://example.com/note/articles/note_article_2026_001"
+  },
+  "consciousness_annotation": {
+    "center": {
+      "core_question": "AIに読まれる知識は、無料素材のままでよいのか？",
+      "initial_friction": "AIが人間の記事や思想を参照して価値を生成しているにもかかわらず、その痕跡や還元構造が十分に整備されていないことへの違和感。",
+      "bodily_sensation": {
+        "label": "胸の奥に残る圧迫感と、構造がまだ閉じていない感覚",
+        "visibility": "restricted",
+        "confidence": 0.82,
+        "annotation_origin": "creator_provided"
+      },
+      "center_notes": "この記事の震源は、AI時代における知識参照・痕跡・価値還元の非対称性にある。"
+    },
+    "layers": {
+      "surface": {
+        "facts": [
+          {
+            "statement": "AI検索やRAGシステムは、Web上の記事、論文、ニュース、投稿などを参照して回答を生成する。",
+            "source_ref": "internal_trace:rag_observation_001",
+            "certainty_level": 0.9,
+            "source_type": "internal_trace"
+          },
+          {
+            "statement": "AIが参照した知識の起点や影響度を記録する仕組みは、一般的なWeb公開環境ではまだ十分に標準化されていない。",
+            "source_ref": "internal_trace:trace_gap_001",
+            "certainty_level": 0.78,
+            "source_type": "internal_trace"
+          },
+          {
+            "statement": "知識コンテンツの価値還元には、単なるアクセス数ではなく、参照・引用・影響・再利用の痕跡を扱う仕組みが必要になる。",
+            "source_ref": "internal_trace:royalty_os_concept_001",
+            "certainty_level": 0.86,
+            "source_type": "internal_trace"
+          }
+        ],
+        "certainty_level": 0.84,
+        "surface_summary": "AI時代には、知識が読まれるだけでなく、AIによって参照・再構成・再配布されるため、従来のアクセス中心モデルだけでは価値の流れを捉えきれない。"
+      },
+      "deep": {
+        "context": "この記事は、AI検索・RAG・note記事・印税OS・痕跡管理の交差点にある。単なる著作権論ではなく、人間が生み出した問いや思想がAI時代にどのように読まれ、記録され、還元されるべきかを問う構造的問題を扱っている。",
+        "affective_tags": [
+          "違和感",
+          "構造的緊張",
+          "知的フェアトレード",
+          "問いの保護",
+          "価値循環",
+          "静かな怒り",
+          "制度化への意志"
+        ],
+        "interpretive_summary": "このコンテンツの深層には、AIが知識を消費する時代において、創作者の問い・震源・構造的貢献が不可視化されることへの抵抗がある。同時に、それを単なる批判ではなく、TraceとRoyaltyの制度設計へ変換しようとする意志がある。",
+        "intensity": 0.88,
+        "visibility": "restricted",
+        "personal_resolution": "AIによる参照を拒絶するのではなく、痕跡と還元の仕組みを整えることで、人間とAIの知的共存を可能にする。"
+      }
+    },
+    "connections": [
+      {
+        "from": "center",
+        "to": "surface",
+        "relation_type": "clarification",
+        "strength": 0.76,
+        "confidence": 0.81,
+        "description": "中心の問いが、AI検索・RAG・参照ログ・価値還元という表層的な論点として展開されている。"
+      },
+      {
+        "from": "surface",
+        "to": "deep",
+        "relation_type": "transformation",
+        "strength": 0.84,
+        "confidence": 0.79,
+        "description": "技術的な参照問題が、創作者の問いや思想の不可視化という深層問題へ変換されている。"
+      },
+      {
+        "from": "deep",
+        "to": "center",
+        "relation_type": "resonance",
+        "strength": 0.91,
+        "confidence": 0.86,
+        "description": "深層の違和感が、再び『AIに読まれる知識は無料素材のままでよいのか』という中心の問いを強化している。"
+      }
+    ],
+    "rotation_dynamics": {
+      "dominant_axis": "question",
+      "resonance_points": [
+        "AI検索",
+        "RAG",
+        "note",
+        "Trace",
+        "Royalty OS",
+        "知的フェアトレード",
+        "構造的同期",
+        "問いの震源"
+      ],
+      "openness_score": 0.74,
+      "rotation_notes": "この意識構造丸は、批判から制度設計へ、違和感から仕様化へと回転している。"
+    }
+  },
+  "trace_governance": {
+    "annotation_method": "ai_assisted",
+    "review_status": "draft",
+    "consent_scope": "royalty_reference",
+    "human_final_edit": true,
+    "provenance_refs": [
+      "trace:note_article_2026_001",
+      "content_hash:sha256:example000000000000000000000000000000000000000000000000000001"
+    ],
+    "reviewer_notes": "This sample is intended for schema validation, documentation, and demonstration of note-style article metadata. Deep-layer fields should remain opt-in and editable by the creator."
+  },
+  "royalty_readiness": {
+    "eligible_for_allocation_review": true,
+    "depth_signal_score": 0.83,
+    "requires_human_review": true,
+    "scoring_method": "hybrid",
+    "allocation_notes": "This metadata may support allocation-readiness review by indicating semantic depth, traceable question structure, and resonance strength. It must not trigger automatic royalty allocation without human or multi-wing review.",
+    "anti_gaming_flags": [
+      "unreviewed_ai_inference"
+    ]
+  }
+}
