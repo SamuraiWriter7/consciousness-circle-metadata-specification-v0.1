@@ -2,7 +2,7 @@
 
 A metadata specification for annotating the question, friction, surface facts, deep context, relational dynamics, trace governance, and allocation-readiness of a content item in AI-mediated knowledge ecosystems.
 
-This specification is designed for environments where human-created knowledge is increasingly read, retrieved, summarized, referenced, and recomposed by AI systems.
+This specification is designed for environments where human-created knowledge is increasingly read, retrieved, summarized, referenced, transformed, and recomposed by AI systems.
 
 It provides a structured way to describe not only what a content item says, but also the question, tension, semantic depth, and interpretive movement behind it.
 
@@ -10,7 +10,7 @@ It provides a structured way to describe not only what a content item says, but 
 
 ## Purpose
 
-The Consciousness Circle Metadata Specification defines a metadata layer for content such as articles, essays, notes, repository documents, book sections, and other knowledge artifacts.
+The Consciousness Circle Metadata Specification defines a metadata layer for content such as articles, essays, notes, repository documents, book sections, social posts, and other knowledge artifacts.
 
 Its purpose is to support:
 
@@ -19,6 +19,8 @@ Its purpose is to support:
 - question-centered indexing
 - surface/deep layer annotation
 - creator-controlled deep metadata
+- consent-aware RAG workflows
+- trace governance
 - allocation-readiness review
 - privacy-preserving semantic metadata
 - future Royalty OS and Trace Protocol workflows
@@ -56,7 +58,7 @@ royalty-readiness signals
 
 The goal is not to reduce living thought to dead tags.
 
-The goal is to make the structure of meaning traceable while preserving creator agency, consent, and human review.
+The goal is to make the structure of meaning traceable while preserving creator agency, consent, privacy, and human review.
 
 ---
 
@@ -157,7 +159,10 @@ from tension to traceable structure
 │   └── note-article-consciousness-circle.sample.json
 └── docs/
     ├── field-definitions.md
-    └── privacy-consent-and-human-review.md
+    ├── privacy-consent-and-human-review.md
+    ├── relationship-to-trace-protocol.md
+    ├── relationship-to-royalty-os.md
+    └── rag-integration-notes.md
 ```
 
 ### Key Files
@@ -170,8 +175,11 @@ from tension to traceable structure
 | `CHANGELOG.md` | Version history and notable changes. |
 | `schemas/consciousness-circle-metadata.schema.json` | JSON Schema definition for Consciousness Circle metadata. |
 | `examples/note-article-consciousness-circle.sample.json` | Example metadata object for a note-style article. |
-| `docs/field-definitions.md` | Detailed explanation of fields, allowed values, and usage notes. |
-| `docs/privacy-consent-and-human-review.md` | Privacy, consent, human review, RAG safeguards, and allocation-readiness safeguards. |
+| `docs/field-definitions.md` | Detailed explanation of fields, allowed values, score interpretation, and usage notes. |
+| `docs/privacy-consent-and-human-review.md` | Privacy, consent, visibility control, human review, RAG safeguards, and allocation-readiness safeguards. |
+| `docs/relationship-to-trace-protocol.md` | Explains how Consciousness Circle Metadata relates to Trace Protocol and semantic trace workflows. |
+| `docs/relationship-to-royalty-os.md` | Explains how Consciousness Circle Metadata may support Royalty OS review without becoming an automatic allocation engine. |
+| `docs/rag-integration-notes.md` | Explains how the metadata may be integrated into RAG systems for meaning-aware retrieval with consent controls. |
 
 ---
 
@@ -194,14 +202,23 @@ Recommended reading order:
 5. `docs/privacy-consent-and-human-review.md`  
    Review privacy, consent, visibility control, human final edit, AI-inferred metadata handling, and anti-gaming safeguards.
 
-6. `CHANGELOG.md`  
+6. `docs/relationship-to-trace-protocol.md`  
+   Understand how Consciousness Circle Metadata acts as a semantic pre-trace layer for Trace Protocol workflows.
+
+7. `docs/relationship-to-royalty-os.md`  
+   Understand how the metadata may support Royalty OS and Allocation Readiness without directly triggering royalties.
+
+8. `docs/rag-integration-notes.md`  
+   Review how RAG systems may use the metadata for question-centered, meaning-aware retrieval while respecting consent and visibility controls.
+
+9. `CHANGELOG.md`  
    Check the version history and notable changes for this specification.
 
-7. `CITATION.cff`  
-   Use this file when citing or referencing the specification in papers, repositories, articles, or derivative work.
+10. `CITATION.cff`  
+    Use this file when citing or referencing the specification in papers, repositories, articles, or derivative work.
 
-8. `LICENSE`  
-   Review the license terms before reuse, modification, redistribution, or integration.
+11. `LICENSE`  
+    Review the license terms before reuse, modification, redistribution, or integration.
 
 ---
 
@@ -369,6 +386,46 @@ connection.strength > 0.6
 
 RAG systems should not expose private or restricted fields unless explicitly permitted.
 
+For detailed guidance, see:
+
+```text
+docs/rag-integration-notes.md
+```
+
+---
+
+## Trace Protocol Relationship
+
+Consciousness Circle Metadata can act as a semantic pre-trace layer.
+
+```text
+Consciousness Circle Metadata
+= describes the semantic structure behind content
+
+Trace Protocol
+= records how that content is referenced, reused, transformed, or connected
+```
+
+Recommended flow:
+
+```text
+Semantic Epicenter Layer
+↓
+Trace Layer
+↓
+Review / Dispute Layer
+↓
+Allocation Readiness
+↓
+Royalty OS
+```
+
+For detailed guidance, see:
+
+```text
+docs/relationship-to-trace-protocol.md
+```
+
 ---
 
 ## Royalty OS Usage
@@ -403,6 +460,12 @@ The metadata provides signals.
 
 It does not create entitlement by itself.
 
+For detailed guidance, see:
+
+```text
+docs/relationship-to-royalty-os.md
+```
+
 ---
 
 ## Allocation-Readiness
@@ -427,6 +490,15 @@ Important safeguards:
 - high intensity does not equal entitlement
 - AI-estimated scores require review
 - allocation decisions must remain separate from metadata annotation
+
+The core principle is:
+
+```text
+Depth is a signal.
+Trace is evidence.
+Review is the gate.
+Allocation is a separate decision.
+```
 
 ---
 
@@ -523,6 +595,10 @@ Allocation-readiness systems can use the metadata as one signal among many, whil
 
 Multiple AI models, human reviewers, or domain perspectives can review the same metadata object before high-impact use.
 
+### 6. Meaning-Aware RAG
+
+RAG systems can use creator-approved metadata to retrieve not only relevant text, but also relevant questions, semantic movement, and contextual structure.
+
 ---
 
 ## Minimal Safe Implementation
@@ -590,7 +666,7 @@ This specification is designed to be compatible with or extendable toward:
 - provenance and audit systems
 - semantic indexing systems
 
-It can be used independently, but its full value appears when connected to trace, review, and allocation-readiness layers.
+It can be used independently, but its full value appears when connected to trace, review, retrieval, and allocation-readiness layers.
 
 ---
 
@@ -633,7 +709,7 @@ CHANGELOG.md
 The current release is:
 
 ```text
-v0.1.0
+v0.1.1
 ```
 
 ---
@@ -641,9 +717,9 @@ v0.1.0
 ## Status
 
 ```text
-Version: 0.1.0
+Version: 0.1.1
 Status: Draft
-Scope: Initial metadata schema, example, field definitions, privacy/human-review principles, license, citation metadata, and changelog
+Scope: Initial metadata schema, example, field definitions, privacy/human-review principles, Trace Protocol relationship, Royalty OS relationship, RAG integration notes, license, citation metadata, and changelog
 ```
 
 This is an early specification.
@@ -654,6 +730,9 @@ The current version focuses on:
 - separating annotation from allocation
 - preserving privacy and consent
 - supporting future RAG and Royalty OS workflows
+- documenting relationship to Trace Protocol
+- documenting relationship to Royalty OS
+- documenting RAG integration principles
 - preventing premature automation
 - documenting citation, licensing, and change history
 
@@ -671,6 +750,9 @@ This specification does not aim to:
 - expose private deep-layer metadata
 - convert emotional intensity into entitlement
 - define consciousness scientifically or metaphysically
+- define a complete RAG architecture
+- define a complete Trace Protocol schema
+- define a complete Royalty OS payment engine
 
 It is a practical metadata specification, not a claim about the nature of consciousness.
 
@@ -681,11 +763,12 @@ It is a practical metadata specification, not a claim about the nature of consci
 Possible future documentation extensions include:
 
 ```text
-docs/rag-integration-notes.md
-docs/relationship-to-trace-protocol.md
-docs/relationship-to-royalty-os.md
 docs/multi-wing-review-notes.md
 docs/depth-signal-scoring.md
+docs/semantic-epicenter-layer.md
+docs/dispute-handling-notes.md
+docs/redaction-and-public-summary.md
+docs/platform-implementation-guide.md
 ```
 
 Possible future examples include:
@@ -694,6 +777,9 @@ Possible future examples include:
 examples/minimal-private-metadata.sample.json
 examples/public-rag-reference.sample.json
 examples/royalty-readiness-review.sample.json
+examples/trace-protocol-reference.sample.json
+examples/rag-retrieval-event.sample.json
+examples/redacted-public-summary.sample.json
 ```
 
 Possible future schema extensions include:
@@ -706,13 +792,15 @@ public_summary
 private_layer_redaction
 depth_signal_breakdown
 semantic_resonance_map
+rag_usage_policy
+allocation_review_state
 ```
 
 ---
 
 ## Summary
 
-The Consciousness Circle Metadata Specification v0.1.0 provides a structured way to annotate the deeper semantic structure behind content.
+The Consciousness Circle Metadata Specification v0.1.1 provides a structured way to annotate the deeper semantic structure behind content.
 
 It allows AI systems to understand content through:
 
@@ -722,6 +810,7 @@ It allows AI systems to understand content through:
 - the context that deepens it
 - the connections that move it
 - the governance that protects it
+- the retrieval layer that uses it carefully
 - the review layer that prevents abuse
 
 Its purpose is simple:
@@ -729,6 +818,7 @@ Its purpose is simple:
 ```text
 Make meaning traceable.
 Keep the creator sovereign.
+Retrieve meaning with consent.
 Separate depth from automatic entitlement.
 Prepare knowledge for AI-era retrieval, trace, and value circulation.
 ```
