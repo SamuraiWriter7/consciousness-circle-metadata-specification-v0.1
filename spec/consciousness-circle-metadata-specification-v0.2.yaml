@@ -1,0 +1,1360 @@
+specification:
+  name: Consciousness Circle Metadata Specification
+  version: "0.2.0"
+  status: draft
+  document_type: reference_specification
+  schema_status: proposed
+  previous_version: "0.1.1"
+
+  description: >
+    A metadata specification for describing the question, friction,
+    proto-friction, meaning structure, visibility scope, sovereignty control,
+    trace governance, and allocation-readiness of human-originated content
+    in AI-mediated knowledge ecosystems.
+
+  purpose:
+    - preserve the human-originated structure of meaning
+    - support question-centered metadata
+    - protect creator-defined interpretation boundaries
+    - represent friction before and after articulation
+    - define visibility and AI inference boundaries
+    - prepare structured metadata for RAG, trace, review, and future allocation workflows
+
+  non_goals:
+    - prove legal authorship
+    - diagnose creators
+    - infer hidden motives as facts
+    - automatically allocate royalties
+    - replace human review
+    - enforce runtime compliance by metadata alone
+    - require creators to disclose private friction
+    - define consciousness scientifically or metaphysically
+
+  design_principles:
+    - creator_controlled
+    - privacy_preserving
+    - human_review_required_for_sensitive_use
+    - question_centered
+    - friction_aware
+    - silence_respecting
+    - AI_inference_limited_by_default
+    - metadata_is_not_entitlement
+    - trace_is_evidence_review_is_gate
+
+  normative_keywords:
+    MUST: required for conformance
+    SHOULD: strongly recommended
+    MAY: optional or implementation-dependent
+    MUST_NOT: prohibited for conforming systems
+
+---
+
+versioning:
+  schema_version: "0.2.0"
+  compatibility:
+    extends: "0.1.1"
+    breaking_change: true
+    notes: >
+      Version 0.2.0 introduces structured circle fields, friction taxonomy,
+      proto-friction handling, visibility scope, and sovereignty control.
+      Implementations using v0.1.x metadata may require migration.
+
+  migration_notes:
+    from_v0_1_to_v0_2:
+      - map consciousness_annotation.center.core_question to circle.core_question
+      - map consciousness_annotation.center.initial_friction to circle.initial_friction
+      - map deep visibility fields to circle.visibility_scope where applicable
+      - retain trace_governance and royalty_readiness as separate governance sections
+      - add sovereignty_control for AI interpretation and inference boundaries
+      - optionally add proto_friction for pre-question or unresolved origin pressure
+
+---
+
+top_level_object:
+  name: consciousness_circle_metadata
+  required_sections:
+    - schema_version
+    - content_identity
+    - circle
+    - trace_governance
+  recommended_sections:
+    - sovereignty_control
+    - privacy_and_consent
+    - rag_usage_policy
+  optional_sections:
+    - royalty_readiness
+    - review_state
+    - external_references
+    - implementation_notes
+
+---
+
+controlled_vocabularies:
+  content_type:
+    - article
+    - essay
+    - note
+    - repository_document
+    - book_section
+    - social_post
+    - specification
+    - dataset_description
+    - code_repository
+    - other
+
+  annotation_method:
+    - creator_declared
+    - creator_reviewed_ai_assisted
+    - human_reviewer
+    - multi_wing_review
+    - ai_inferred_unreviewed
+
+  review_status:
+    - draft
+    - reviewed
+    - creator_approved
+    - disputed
+    - withdrawn
+    - archived
+
+  consent_scope:
+    - private
+    - local_use_only
+    - creator_review
+    - rag_reference
+    - public_reference
+    - trace_reference
+    - allocation_review
+    - unrestricted_public
+
+  friction_type:
+    - bodily_friction
+    - daily_life_friction
+    - social_friction
+    - cognitive_dissonance
+    - ethical_conflict
+    - raw_unresolved_friction
+    - other
+
+  friction_state:
+    - emerging
+    - active
+    - structured
+    - resolved
+    - unresolved
+    - transformed
+    - withdrawn
+
+  proto_state:
+    - emerging
+    - recurring
+    - unstable
+    - pressurized
+    - partially_articulated
+    - deferred
+    - withdrawn
+
+  articulation_level:
+    - pre_verbal
+    - image_based
+    - gesture_based
+    - fragmentary
+    - partial_sentence
+    - draft_question
+    - structured_friction
+
+  disclosure_level:
+    - public
+    - abstract_public
+    - ai_read
+    - ai_summary_only
+    - private
+    - encrypted
+    - silent
+
+  visibility_scope_value:
+    - public
+    - abstract_public
+    - ai_read
+    - ai_summary_only
+    - private
+    - encrypted
+    - silent
+
+  circle_depth:
+    - depth_0_public
+    - depth_1_structural
+    - depth_2_private
+    - depth_3_silent
+
+  circle_openness:
+    - open
+    - semi_open
+    - closed
+    - sealed
+
+  circle_lifecycle_state:
+    - draft
+    - active
+    - revised
+    - superseded
+    - withdrawn
+    - archived
+    - sealed
+
+  sub_circle_dependency_type:
+    - derives_from
+    - supports
+    - contrasts_with
+    - extends
+    - refines
+    - protects
+    - questions
+    - supersedes
+
+  evolution_type:
+    - origin
+    - revision
+    - expansion
+    - correction
+    - reflection
+    - transformation
+    - supersession
+    - withdrawal
+
+  sovereignty_access_layer:
+    - core
+    - inner
+    - outer
+
+  derivation_restriction:
+    - none
+    - soft
+    - moderate
+    - strict
+
+  inference_boundary:
+    - free_inference
+    - limited_inference
+    - no_private_inference
+    - no_inference
+
+  violation_behavior:
+    - warn
+    - halt
+    - return_original_structure
+    - halt_and_return_original_structure
+    - log_violation
+    - halt_and_return_declared_boundary
+
+  silence_reason_type:
+    - creator_boundary
+    - privacy
+    - unresolved_friction
+    - ethical_risk
+    - emotional_risk
+    - context_not_ready
+    - future_revision
+    - sealed_origin
+
+  vibration_signal_type:
+    - recurring_discomfort
+    - bodily_signal
+    - ethical_pressure
+    - conceptual_gap
+    - social_resistance
+    - creative_pull
+    - silence_pressure
+    - unclassified_signal
+
+  anti_gaming_flag:
+    - score_inflation
+    - low_confidence_high_depth
+    - missing_sources
+    - unreviewed_ai_inference
+    - privacy_sensitive_claim
+    - contradictory_metadata
+    - excessive_self_claim
+    - unclear_origin_pressure
+    - other
+
+---
+
+fields:
+  schema_version:
+    type: string
+    required: true
+    example: "0.2.0"
+
+  content_identity:
+    type: object
+    required: true
+    description: >
+      Identifies the content item being annotated.
+
+    required_fields:
+      - content_id
+      - content_type
+      - title
+
+    fields:
+      content_id:
+        type: string
+        required: true
+        description: Stable identifier for the content item.
+        example: "content-2026-001"
+
+      content_type:
+        type: enum
+        vocabulary: content_type
+        required: true
+        example: article
+
+      title:
+        type: string
+        required: true
+        example: "The OS of Questions"
+
+      creator_id:
+        type: string
+        required: false
+        description: Creator-defined identifier or pseudonymous ID.
+        example: "creator-samuraiwriter7"
+
+      canonical_uri:
+        type: string
+        format: uri
+        required: false
+        example: "https://example.org/the-os-of-questions"
+
+      language:
+        type: string
+        required: false
+        example: "en"
+
+      created_at:
+        type: string
+        format: date-time
+        required: false
+
+      updated_at:
+        type: string
+        format: date-time
+        required: false
+
+---
+
+circle:
+  type: object
+  required: true
+  description: >
+    The main Consciousness Circle object. It represents the layered structure
+    of friction, question, meaning boundary, visibility scope, and sovereignty control.
+
+  required_fields:
+    - circle_id
+    - circle_version
+    - core_question
+    - initial_friction
+    - visibility_scope
+
+  recommended_fields:
+    - meaning_structure
+    - sovereignty_control
+    - circle_lifecycle
+    - circle_state
+
+  optional_fields:
+    - proto_friction
+    - sub_circles
+    - temporal_relationship
+    - silence_node
+    - circle_layers
+
+  fields:
+    circle_id:
+      type: string
+      required: true
+      example: "circle-2026-001"
+
+    circle_version:
+      type: string
+      required: true
+      example: "0.2"
+
+    core_question:
+      type: string
+      required: true
+      description: >
+        The central question from which the work emerged.
+        This is not a title, topic, keyword, or summary.
+      example: "Who owns the question in the age of AI?"
+
+    circle_lifecycle:
+      type: object
+      required: false
+      fields:
+        state:
+          type: enum
+          vocabulary: circle_lifecycle_state
+          example: active
+        created_at:
+          type: string
+          format: date-time
+        revised_at:
+          type: string
+          format: date-time
+          nullable: true
+        superseded_by:
+          type: string
+          nullable: true
+
+    circle_state:
+      type: object
+      required: false
+      fields:
+        openness:
+          type: enum
+          vocabulary: circle_openness
+          example: semi_open
+        interpretation_allowed:
+          type: boolean
+          example: true
+        derivation_allowed:
+          type: boolean
+          example: false
+        inference_boundary:
+          type: enum
+          vocabulary: inference_boundary
+          example: no_private_inference
+
+---
+
+proto_friction:
+  type: object
+  required: false
+  description: >
+    Optional pre-question layer for friction that has not yet become structured
+    initial friction or a clear core question.
+
+  fields:
+    present:
+      type: boolean
+      required: true
+      example: true
+
+    proto_friction_id:
+      type: string
+      required: false
+      example: "proto-2026-001"
+
+    proto_state:
+      type: enum
+      vocabulary: proto_state
+      required: false
+      example: recurring
+
+    articulation_level:
+      type: enum
+      vocabulary: articulation_level
+      required: false
+      example: fragmentary
+
+    disclosure_level:
+      type: enum
+      vocabulary: disclosure_level
+      required: false
+      default: private
+      example: private
+
+    ai_inference_allowed:
+      type: boolean
+      required: false
+      default: false
+
+    vibration_log:
+      type: array
+      required: false
+      items:
+        type: object
+        fields:
+          vibration_id:
+            type: string
+            example: "vibration-001"
+          date:
+            type: string
+            format: date
+          signal_type:
+            type: enum
+            vocabulary: vibration_signal_type
+            example: recurring_discomfort
+          articulation_level:
+            type: enum
+            vocabulary: articulation_level
+            example: fragmentary
+          note:
+            type: string
+            visibility_recommendation: private
+          ai_inference_allowed:
+            type: boolean
+            default: false
+
+    shadow_friction:
+      type: object
+      required: false
+      fields:
+        present:
+          type: boolean
+          example: true
+        disclosure_level:
+          type: enum
+          vocabulary: disclosure_level
+          default: private
+        reason_type:
+          type: enum
+          vocabulary: silence_reason_type
+          example: creator_boundary
+        ai_inference_allowed:
+          type: boolean
+          default: false
+        note:
+          type: string
+          required: false
+
+    silence_node:
+      type: object
+      required: false
+      fields:
+        present:
+          type: boolean
+          example: true
+        reason_type:
+          type: enum
+          vocabulary: silence_reason_type
+          example: context_not_ready
+        ai_inference_allowed:
+          type: boolean
+          default: false
+
+    proto_friction_control:
+      type: object
+      required: false
+      fields:
+        summarization_allowed:
+          type: boolean
+          default: false
+        transformation_allowed:
+          type: boolean
+          default: false
+        reconstruction_allowed:
+          type: boolean
+          default: false
+        on_violation:
+          type: enum
+          vocabulary: violation_behavior
+          example: halt_and_return_declared_boundary
+
+---
+
+initial_friction:
+  type: object
+  required: true
+  description: >
+    Structured origin pressure behind the core question.
+
+  required_fields:
+    - primary_friction_type
+
+  fields:
+    primary_friction_type:
+      type: enum
+      vocabulary: friction_type
+      required: true
+      example: ethical_conflict
+
+    secondary_friction_types:
+      type: array
+      required: false
+      items:
+        type: enum
+        vocabulary: friction_type
+      example:
+        - cognitive_dissonance
+        - social_friction
+
+    friction_intensity:
+      type: number
+      required: false
+      minimum: 0.0
+      maximum: 1.0
+      description: >
+        Creator-declared intensity signal. This is not an objective measurement
+        and MUST NOT be used to rank creators.
+      example: 0.78
+
+    friction_state:
+      type: enum
+      vocabulary: friction_state
+      required: false
+      example: structured
+
+    disclosure_level:
+      type: enum
+      vocabulary: disclosure_level
+      required: false
+      default: abstract_public
+      example: abstract_public
+
+    public_friction_label:
+      type: string
+      required: false
+      description: >
+        Abstract public label for the friction source.
+      example: "ethical discomfort regarding AI interpretation and creator sovereignty"
+
+    friction_raw:
+      type: string
+      required: false
+      visibility_recommendation: private
+      description: >
+        Raw friction text or note. SHOULD be private or encrypted by default.
+
+    friction_unresolved:
+      type: boolean
+      required: false
+      example: true
+
+    friction_timeline:
+      type: array
+      required: false
+      items:
+        type: object
+        fields:
+          event_type:
+            type: string
+            example: emergence
+          date:
+            type: string
+            format: date
+          note:
+            type: string
+            required: false
+
+    shadow_friction:
+      type: object
+      required: false
+      description: >
+        Declares the presence of private or undefined friction that AI systems
+        MUST NOT infer or reconstruct.
+      fields:
+        present:
+          type: boolean
+          example: true
+        disclosure_level:
+          type: enum
+          vocabulary: disclosure_level
+          default: private
+        ai_inference_allowed:
+          type: boolean
+          default: false
+        note:
+          type: string
+          required: false
+
+    silence_node:
+      type: object
+      required: false
+      fields:
+        present:
+          type: boolean
+          example: true
+        reason_type:
+          type: enum
+          vocabulary: silence_reason_type
+          example: creator_boundary
+        ai_inference_allowed:
+          type: boolean
+          default: false
+
+---
+
+meaning_structure:
+  type: object
+  required: false
+  recommended: true
+  description: >
+    Creator-declared structure of meaning. It helps AI systems avoid flattening
+    the work into a generic summary.
+
+  fields:
+    central_claim:
+      type: string
+      required: false
+      example: "Human-originated questions require creator-defined meaning sovereignty."
+
+    key_concepts:
+      type: array
+      required: false
+      items:
+        type: string
+      example:
+        - question_sovereignty
+        - initial_friction
+        - creator_defined_meaning
+        - semantic_boundary
+
+    intended_scope:
+      type: array
+      required: false
+      items:
+        type: string
+      example:
+        - AI metadata design
+        - creator sovereignty
+        - RAG interpretation
+
+    excluded_interpretations:
+      type: array
+      required: false
+      items:
+        type: string
+      example:
+        - "This framework rejects AI."
+        - "This framework requires disclosure of private friction."
+
+    interpretation_notes:
+      type: array
+      required: false
+      items:
+        type: string
+
+---
+
+visibility_scope:
+  type: object
+  required: true
+  description: >
+    Defines how different parts of the circle may be accessed.
+
+  fields:
+    circle:
+      type: enum
+      vocabulary: visibility_scope_value
+      required: true
+      example: ai_read
+
+    core_question:
+      type: enum
+      vocabulary: visibility_scope_value
+      required: false
+      example: ai_read
+
+    initial_friction:
+      type: enum
+      vocabulary: visibility_scope_value
+      required: false
+      example: abstract_public
+
+    raw_friction:
+      type: enum
+      vocabulary: visibility_scope_value
+      required: false
+      example: private
+
+    proto_friction:
+      type: enum
+      vocabulary: visibility_scope_value
+      required: false
+      example: private
+
+    shadow_friction:
+      type: enum
+      vocabulary: visibility_scope_value
+      required: false
+      example: silent
+
+    silence_node:
+      type: enum
+      vocabulary: visibility_scope_value
+      required: false
+      example: silent
+
+    meaning_structure:
+      type: enum
+      vocabulary: visibility_scope_value
+      required: false
+      example: ai_read
+
+---
+
+circle_layers:
+  type: object
+  required: false
+  description: >
+    Optional layer model for separating core, inner, and outer circle data.
+
+  fields:
+    core_layer:
+      type: object
+      required: false
+      description: >
+        Deepest origin material. Private by default.
+      default_visibility: private
+
+    inner_layer:
+      type: object
+      required: false
+      description: >
+        Creator-declared meaning structure. May be AI-readable under restriction.
+      default_visibility: ai_read
+
+    outer_layer:
+      type: object
+      required: false
+      description: >
+        Public-facing material suitable for indexing, citation, and retrieval.
+      default_visibility: public
+
+---
+
+sovereignty_control:
+  type: object
+  required: false
+  recommended: true
+  description: >
+    Defines creator-controlled interpretation, summarization, derivation,
+    and inference boundaries for AI systems.
+
+  fields:
+    control_version:
+      type: string
+      required: false
+      example: "0.1"
+
+    access_layer:
+      type: enum
+      vocabulary: sovereignty_access_layer
+      required: false
+      example: inner
+
+    interpretation_allowed:
+      type: boolean
+      required: false
+      example: true
+
+    summarization_allowed:
+      type: boolean
+      required: false
+      example: false
+
+    transformation_allowed:
+      type: boolean
+      required: false
+      example: false
+
+    derivation_restriction:
+      type: enum
+      vocabulary: derivation_restriction
+      required: false
+      example: strict
+
+    inference_boundary:
+      type: enum
+      vocabulary: inference_boundary
+      required: false
+      example: no_private_inference
+
+    allowed_operations:
+      type: array
+      required: false
+      items:
+        type: string
+      example:
+        - read_declared_structure
+        - cite_original_structure
+
+    prohibited_operations:
+      type: array
+      required: false
+      items:
+        type: string
+      example:
+        - infer_private_friction
+        - summarize_core_question_without_permission
+        - reconstruct_private_context
+        - diagnose_creator
+
+    on_violation:
+      type: enum
+      vocabulary: violation_behavior
+      required: false
+      example: halt_and_return_original_structure
+
+    audit:
+      type: object
+      required: false
+      fields:
+        violation_logging_required:
+          type: boolean
+          example: true
+        audit_trace_required:
+          type: boolean
+          example: true
+
+---
+
+meaning_boundary:
+  type: object
+  required: false
+  description: >
+    Defines where interpretation should stop.
+
+  fields:
+    allowed_interpretations:
+      type: array
+      required: false
+      items:
+        type: string
+
+    restricted_interpretations:
+      type: array
+      required: false
+      items:
+        type: string
+      example:
+        - private psychological diagnosis
+        - inference of undisclosed personal experience
+        - reconstruction of raw friction
+
+    ai_inference_allowed:
+      type: boolean
+      required: false
+      default: false
+
+---
+
+sub_circles:
+  type: array
+  required: false
+  description: >
+    Recursive circle structures nested under the main circle.
+
+  items:
+    type: object
+    fields:
+      circle_id:
+        type: string
+        required: true
+      core_question:
+        type: string
+        required: true
+      dependency_type:
+        type: enum
+        vocabulary: sub_circle_dependency_type
+        required: false
+      visibility_scope:
+        type: enum
+        vocabulary: visibility_scope_value
+        required: false
+      sovereignty_control:
+        type: object
+        required: false
+
+---
+
+temporal_relationship:
+  type: object
+  required: false
+  description: >
+    Records how this circle relates to earlier or later circles.
+
+  fields:
+    parent_circle_id:
+      type: string
+      required: false
+
+    previous_version:
+      type: string
+      required: false
+
+    current_version:
+      type: string
+      required: false
+      example: "0.2"
+
+    evolution_type:
+      type: enum
+      vocabulary: evolution_type
+      required: false
+      example: revision
+
+    continuity_note:
+      type: string
+      required: false
+
+---
+
+trace_governance:
+  type: object
+  required: true
+  description: >
+    Defines annotation method, consent, review status, and provenance references.
+
+  required_fields:
+    - annotation_method
+    - consent_scope
+    - review_status
+
+  fields:
+    annotation_method:
+      type: enum
+      vocabulary: annotation_method
+      required: true
+      example: creator_declared
+
+    consent_scope:
+      type: enum
+      vocabulary: consent_scope
+      required: true
+      example: rag_reference
+
+    review_status:
+      type: enum
+      vocabulary: review_status
+      required: true
+      example: creator_approved
+
+    human_final_edit:
+      type: boolean
+      required: false
+      recommended: true
+      default: true
+
+    provenance_references:
+      type: array
+      required: false
+      items:
+        type: string
+
+    reviewer_notes:
+      type: string
+      required: false
+      visibility_recommendation: private
+
+---
+
+privacy_and_consent:
+  type: object
+  required: false
+  recommended: true
+
+  fields:
+    private_fields:
+      type: array
+      required: false
+      items:
+        type: string
+      example:
+        - proto_friction
+        - raw_friction
+        - shadow_friction
+        - silence_node
+        - reviewer_notes
+
+    public_fields:
+      type: array
+      required: false
+      items:
+        type: string
+
+    redaction_required:
+      type: boolean
+      required: false
+      default: false
+
+    creator_approval_required_for_public_use:
+      type: boolean
+      required: false
+      default: true
+
+---
+
+rag_usage_policy:
+  type: object
+  required: false
+  recommended: true
+  description: >
+    Defines how RAG systems may index, retrieve, summarize, or exclude this metadata.
+
+  fields:
+    rag_indexing_allowed:
+      type: boolean
+      required: false
+      default: false
+
+    rag_summary_allowed:
+      type: boolean
+      required: false
+      default: false
+
+    allowed_rag_fields:
+      type: array
+      required: false
+      items:
+        type: string
+      example:
+        - content_identity.title
+        - circle.core_question
+        - meaning_structure.central_claim
+
+    excluded_rag_fields:
+      type: array
+      required: false
+      items:
+        type: string
+      example:
+        - proto_friction
+        - initial_friction.friction_raw
+        - shadow_friction
+        - silence_node
+
+    retrieval_notes:
+      type: string
+      required: false
+
+---
+
+royalty_readiness:
+  type: object
+  required: false
+  description: >
+    Indicates whether this metadata may be considered for allocation-readiness review.
+    This section MUST NOT automatically trigger royalties.
+
+  fields:
+    eligible_for_allocation_review:
+      type: boolean
+      required: false
+      default: false
+
+    requires_human_review:
+      type: boolean
+      required: false
+      default: true
+
+    depth_signal_score:
+      type: number
+      required: false
+      minimum: 0.0
+      maximum: 1.0
+
+    scoring_method:
+      type: string
+      required: false
+
+    allocation_notes:
+      type: string
+      required: false
+
+    anti_gaming_flags:
+      type: array
+      required: false
+      items:
+        type: enum
+        vocabulary: anti_gaming_flag
+
+---
+
+validation_rules:
+  required:
+    - schema_version
+    - content_identity
+    - circle
+    - circle.core_question
+    - circle.initial_friction
+    - circle.visibility_scope
+    - trace_governance
+
+  recommended:
+    - circle.meaning_structure
+    - circle.sovereignty_control
+    - privacy_and_consent
+    - rag_usage_policy
+
+  constraints:
+    - id: no_private_inference_from_silence
+      rule: >
+        If silence_node.present is true and ai_inference_allowed is false,
+        AI systems MUST NOT infer or reconstruct the hidden content.
+
+    - id: proto_friction_private_by_default
+      rule: >
+        If proto_friction is present and disclosure_level is omitted,
+        implementations SHOULD treat it as private.
+
+    - id: raw_friction_private_by_default
+      rule: >
+        Raw friction fields SHOULD be private, encrypted, or omitted from public exports.
+
+    - id: metadata_not_allocation
+      rule: >
+        royalty_readiness fields MUST NOT be interpreted as automatic entitlement
+        or automatic royalty allocation.
+
+    - id: creator_final_interpretation
+      rule: >
+        AI-inferred metadata SHOULD remain provisional unless reviewed or approved
+        by the creator or a designated human reviewer.
+
+    - id: existence_does_not_equal_permission
+      rule: >
+        The existence of a metadata field MUST NOT be interpreted as permission
+        to summarize, transform, infer, or expose its content.
+
+---
+
+conformance_profiles:
+  minimal_circle_profile:
+    description: >
+      Minimal v0.2-compatible profile for creator-declared question metadata.
+
+    required_fields:
+      - schema_version
+      - content_identity.content_id
+      - content_identity.content_type
+      - content_identity.title
+      - circle.circle_id
+      - circle.circle_version
+      - circle.core_question
+      - circle.initial_friction.primary_friction_type
+      - circle.visibility_scope.circle
+      - trace_governance.annotation_method
+      - trace_governance.consent_scope
+      - trace_governance.review_status
+
+  standard_circle_profile:
+    description: >
+      Recommended profile for practical RAG, trace, and review workflows.
+
+    required_fields:
+      - all minimal_circle_profile fields
+      - circle.meaning_structure.central_claim
+      - circle.sovereignty_control.inference_boundary
+      - privacy_and_consent
+      - rag_usage_policy
+
+  extended_circle_profile:
+    description: >
+      Extended profile for advanced use cases involving proto-friction,
+      recursive circles, temporal lineage, and sovereignty control.
+
+    recommended_fields:
+      - circle.proto_friction
+      - circle.sub_circles
+      - circle.temporal_relationship
+      - circle.silence_node
+      - circle.circle_layers
+      - royalty_readiness
+
+---
+
+example_minimal_object:
+  schema_version: "0.2.0"
+
+  content_identity:
+    content_id: "content-2026-001"
+    content_type: article
+    title: "The OS of Questions"
+    creator_id: "creator-example"
+    language: "en"
+
+  circle:
+    circle_id: "circle-2026-001"
+    circle_version: "0.2"
+
+    core_question: "Who owns the question in the age of AI?"
+
+    initial_friction:
+      primary_friction_type: ethical_conflict
+      disclosure_level: abstract_public
+      public_friction_label: "ethical discomfort regarding AI interpretation and creator sovereignty"
+
+    meaning_structure:
+      central_claim: "Human-originated questions require creator-defined meaning sovereignty."
+      key_concepts:
+        - question_sovereignty
+        - initial_friction
+        - creator_defined_meaning
+        - semantic_boundary
+
+    visibility_scope:
+      circle: ai_read
+      initial_friction: abstract_public
+      raw_friction: private
+      silence_node: silent
+
+    sovereignty_control:
+      access_layer: inner
+      interpretation_allowed: true
+      summarization_allowed: false
+      transformation_allowed: false
+      derivation_restriction: strict
+      inference_boundary: no_private_inference
+      on_violation: halt_and_return_original_structure
+
+  trace_governance:
+    annotation_method: creator_declared
+    consent_scope: rag_reference
+    review_status: creator_approved
+    human_final_edit: true
+
+  privacy_and_consent:
+    private_fields:
+      - initial_friction.friction_raw
+      - proto_friction
+      - shadow_friction
+      - silence_node
+    creator_approval_required_for_public_use: true
+
+  rag_usage_policy:
+    rag_indexing_allowed: true
+    rag_summary_allowed: false
+    allowed_rag_fields:
+      - content_identity.title
+      - circle.core_question
+      - circle.meaning_structure.central_claim
+    excluded_rag_fields:
+      - initial_friction.friction_raw
+      - proto_friction
+      - shadow_friction
+      - silence_node
+
+  royalty_readiness:
+    eligible_for_allocation_review: false
+    requires_human_review: true
+
+---
+
+future_extensions:
+  possible_schema_fields:
+    - encrypted_core_layer
+    - semantic_brake_runtime_profile
+    - audit_trace_reference
+    - dispute_status
+    - multi_wing_review_result
+    - allocation_review_state
+    - circle_visualization_reference
+
+  possible_future_documents:
+    - docs/friction-encapsulation-model.md
+    - docs/semantic-brake-notes.md
+    - docs/rag-policy-profile.md
+    - docs/circle-visualization-notes.md
+    - docs/multi-wing-review-notes.md
+
+  possible_future_examples:
+    - examples/minimal-circle-v0.2.example.yaml
+    - examples/extended-circle-v0.2.example.yaml
+    - examples/proto-friction-v0.2.example.yaml
+    - examples/silence-node-v0.2.example.yaml
+    - examples/recursive-circle-v0.2.example.yaml
