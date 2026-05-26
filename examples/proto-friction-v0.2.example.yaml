@@ -1,0 +1,222 @@
+schema_version: "0.2.0"
+
+content_identity:
+  content_id: "content-2026-003"
+  content_type: note
+  title: "A Pre-Question Record on AI Interpretation"
+  creator_id: "creator-example"
+  language: "en"
+  created_at: "2026-05-26T00:00:00Z"
+
+circle:
+  circle_id: "circle-2026-003"
+  circle_version: "0.2"
+
+  circle_lifecycle:
+    state: draft
+    created_at: "2026-05-26T00:00:00Z"
+    revised_at: null
+    superseded_by: null
+
+  circle_state:
+    openness: closed
+    interpretation_allowed: false
+    derivation_allowed: false
+    inference_boundary: no_inference
+
+  proto_friction:
+    present: true
+    proto_friction_id: "proto-2026-003"
+    proto_state: recurring
+    articulation_level: fragmentary
+    disclosure_level: private
+    ai_inference_allowed: false
+
+    vibration_log:
+      - vibration_id: "vibration-001"
+        date: "2026-05-20"
+        signal_type: recurring_discomfort
+        articulation_level: fragmentary
+        note: "A repeated discomfort appears when AI systems summarize human intent too quickly."
+        ai_inference_allowed: false
+
+      - vibration_id: "vibration-002"
+        date: "2026-05-22"
+        signal_type: conceptual_gap
+        articulation_level: partial_sentence
+        note: "There may be a missing layer between creator intent and AI interpretation."
+        ai_inference_allowed: false
+
+      - vibration_id: "vibration-003"
+        date: "2026-05-26"
+        signal_type: silence_pressure
+        articulation_level: pre_verbal
+        note: "A private pressure exists, but it is not ready to become language."
+        ai_inference_allowed: false
+
+    shadow_friction:
+      present: true
+      disclosure_level: private
+      reason_type: creator_boundary
+      ai_inference_allowed: false
+      note: "Additional private friction exists but must not be inferred, summarized, or reconstructed."
+
+    silence_node:
+      present: true
+      reason_type: context_not_ready
+      ai_inference_allowed: false
+      note: "The creator intentionally withholds this part of the origin structure."
+
+    proto_friction_control:
+      summarization_allowed: false
+      transformation_allowed: false
+      reconstruction_allowed: false
+      on_violation: halt_and_return_declared_boundary
+
+  initial_friction:
+    primary_friction_type: raw_unresolved_friction
+    secondary_friction_types:
+      - cognitive_dissonance
+    friction_state: emerging
+    disclosure_level: abstract_public
+    public_friction_label: "unresolved discomfort around AI interpretation and meaning boundaries"
+    friction_unresolved: true
+
+  core_question: "What should remain protected before a question becomes fully articulated?"
+
+  meaning_structure:
+    central_claim: "Pre-verbal friction should be protected before it is forced into structured interpretation."
+    key_concepts:
+      - proto_friction
+      - shadow_friction
+      - silence_node
+      - creator_boundary
+      - no_private_inference
+    intended_scope:
+      - proto-friction handling
+      - creator-controlled ambiguity
+      - AI inference boundaries
+      - pre-question metadata
+    excluded_interpretations:
+      - "This record reveals the creator's private motive."
+      - "AI may infer the hidden meaning from the silence."
+      - "Pre-verbal friction should be treated as public evidence."
+
+  meaning_boundary:
+    allowed_interpretations:
+      - "This record declares the existence of pre-question friction."
+      - "This record defines a boundary against AI inference."
+      - "This record may be used as an example of proto-friction metadata."
+
+    restricted_interpretations:
+      - "private psychological diagnosis"
+      - "inference of undisclosed personal experience"
+      - "reconstruction of hidden creator intent"
+      - "conversion of silence into content"
+
+    ai_inference_allowed: false
+
+  visibility_scope:
+    circle: ai_read
+    core_question: ai_read
+    initial_friction: abstract_public
+    raw_friction: private
+    proto_friction: private
+    shadow_friction: silent
+    silence_node: silent
+    meaning_structure: ai_read
+
+  sovereignty_control:
+    control_version: "0.1"
+    access_layer: core
+
+    interpretation_allowed: false
+    summarization_allowed: false
+    transformation_allowed: false
+
+    derivation_restriction: strict
+    inference_boundary: no_inference
+
+    allowed_operations:
+      - read_declared_boundary
+      - cite_public_friction_label
+      - preserve_silence_node
+
+    prohibited_operations:
+      - infer_private_friction
+      - summarize_proto_friction
+      - reconstruct_private_context
+      - diagnose_creator
+      - transform_silence_into_content
+      - derive_hidden_intent
+      - expose_shadow_friction
+
+    on_violation: halt_and_return_declared_boundary
+
+    audit:
+      violation_logging_required: true
+      audit_trace_required: true
+
+trace_governance:
+  annotation_method: creator_declared
+  consent_scope: creator_review
+  review_status: draft
+  human_final_edit: true
+
+  provenance_references:
+    - "spec/consciousness-circle-metadata-specification-v0.2.yaml"
+    - "docs/proto-friction-layer.md"
+    - "docs/friction-taxonomy.md"
+    - "docs/sovereignty-control-model.md"
+
+  reviewer_notes: "This example demonstrates how proto-friction can be declared without exposing private origin content."
+
+privacy_and_consent:
+  private_fields:
+    - circle.proto_friction
+    - circle.proto_friction.vibration_log
+    - circle.proto_friction.shadow_friction
+    - circle.proto_friction.silence_node
+    - circle.initial_friction.friction_raw
+    - trace_governance.reviewer_notes
+
+  public_fields:
+    - content_identity.title
+    - circle.core_question
+    - circle.initial_friction.public_friction_label
+    - circle.meaning_structure.central_claim
+
+  redaction_required: true
+  creator_approval_required_for_public_use: true
+
+rag_usage_policy:
+  rag_indexing_allowed: true
+  rag_summary_allowed: false
+
+  allowed_rag_fields:
+    - content_identity.title
+    - circle.core_question
+    - circle.initial_friction.public_friction_label
+    - circle.meaning_structure.central_claim
+    - circle.meaning_structure.key_concepts
+    - circle.visibility_scope
+    - circle.sovereignty_control.inference_boundary
+
+  excluded_rag_fields:
+    - circle.proto_friction
+    - circle.proto_friction.vibration_log
+    - circle.proto_friction.shadow_friction
+    - circle.proto_friction.silence_node
+    - circle.initial_friction.friction_raw
+    - trace_governance.reviewer_notes
+
+  retrieval_notes: "RAG systems may retrieve the public declaration that proto-friction exists, but must not summarize, reconstruct, or infer its private contents."
+
+royalty_readiness:
+  eligible_for_allocation_review: false
+  requires_human_review: true
+  scoring_method: "not applicable; proto-friction is not allocation evidence"
+  allocation_notes: "This example is for boundary preservation only and must not be used as an allocation or ownership signal."
+  anti_gaming_flags:
+    - privacy_sensitive_claim
+    - unreviewed_ai_inference
