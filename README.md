@@ -1,4 +1,4 @@
-# Consciousness Circle Metadata Specification v0.1
+# Consciousness Circle Metadata Specification
 
 A metadata specification for annotating the question, friction, surface facts, deep context, relational dynamics, sovereignty control, trace governance, and allocation-readiness of a content item in AI-mediated knowledge ecosystems.
 
@@ -8,9 +8,35 @@ It provides a structured way to describe not only what a content item says, but 
 
 ---
 
+## Current Status
+
+```text
+Current stable documentation release: v0.1.2
+Draft reference specification: v0.2.0
+Status: Draft
+```
+
+The v0.1.x series defines the initial metadata schema and documentation layer.
+
+The v0.2 draft materials extend the specification toward a more structured Question OS layer by introducing:
+
+- friction taxonomy
+- recursive circle structure
+- proto-friction handling
+- silence nodes
+- visibility scope
+- sovereignty control
+- v0.2 reference examples
+
+The current v0.2 files are draft reference materials.
+
+They define the proposed object model before full JSON Schema formalization.
+
+---
+
 ## Purpose
 
-The Consciousness Circle Metadata Specification defines a metadata layer for content such as articles, essays, notes, repository documents, book sections, social posts, and other knowledge artifacts.
+The Consciousness Circle Metadata Specification defines a metadata layer for content such as articles, essays, notes, repository documents, book sections, social posts, specifications, and other knowledge artifacts.
 
 Its purpose is to support:
 
@@ -186,14 +212,22 @@ Conceptually:
 v0.1
 = minimum Consciousness Circle metadata
 
-v0.2 design path
-= structured Question OS layer
+v0.2 draft
+= structured Question OS reference model
 
 v0.3 and beyond
 = runtime control, audit, RAG policy, trace integration, and review systems
 ```
 
-The v0.2 design documents are currently exploratory design notes, not yet a finalized schema version.
+The v0.2 reference specification is available at:
+
+```text
+spec/consciousness-circle-metadata-specification-v0.2.yaml
+```
+
+The current v0.2 files are draft reference materials.
+
+They define the proposed object model before full JSON Schema formalization.
 
 ---
 
@@ -206,11 +240,18 @@ The v0.2 design documents are currently exploratory design notes, not yet a fina
 ├── CITATION.cff
 ├── CHANGELOG.md
 │
+├── spec/
+│   └── consciousness-circle-metadata-specification-v0.2.yaml
+│
 ├── schemas/
 │   └── consciousness-circle-metadata.schema.json
 │
 ├── examples/
-│   └── note-article-consciousness-circle.sample.json
+│   ├── note-article-consciousness-circle.sample.json
+│   ├── minimal-circle-v0.2.example.yaml
+│   ├── extended-circle-v0.2.example.yaml
+│   ├── proto-friction-v0.2.example.yaml
+│   └── silence-node-v0.2.example.yaml
 │
 └── docs/
     ├── field-definitions.md
@@ -228,8 +269,9 @@ The v0.2 design documents are currently exploratory design notes, not yet a fina
 
 | Path | Description |
 |---|---|
+| `spec/` | Reference specifications and draft specification files, including the v0.2 Question OS structure. |
 | `schemas/` | JSON Schema definitions for validating Consciousness Circle metadata objects. |
-| `examples/` | Example metadata objects showing how the specification may be used. |
+| `examples/` | Example metadata objects showing how the specification may be used, including v0.2 circle, proto-friction, and silence-node examples. |
 | `docs/` | Design notes and relationship documents explaining how this specification connects to trace systems, RAG systems, creator sovereignty, friction taxonomy, circle structure, and proto-friction handling. |
 
 ---
@@ -242,14 +284,19 @@ The v0.2 design documents are currently exploratory design notes, not yet a fina
 | `LICENSE` | License for the specification, schema, documentation, and associated materials. |
 | `CITATION.cff` | Citation metadata for referencing this specification. |
 | `CHANGELOG.md` | Version history and notable changes. |
-| `schemas/consciousness-circle-metadata.schema.json` | JSON Schema definition for Consciousness Circle metadata. |
-| `examples/note-article-consciousness-circle.sample.json` | Example metadata object for a note-style article. |
+| `schemas/consciousness-circle-metadata.schema.json` | Current JSON Schema definition for Consciousness Circle metadata. |
+| `spec/consciousness-circle-metadata-specification-v0.2.yaml` | Draft v0.2 reference specification, including circle structure, friction taxonomy, proto-friction, visibility scope, sovereignty control, RAG usage policy, and conformance profiles. |
+| `examples/note-article-consciousness-circle.sample.json` | v0.1-style example metadata object for a note-style article. |
+| `examples/minimal-circle-v0.2.example.yaml` | Minimal v0.2-compatible circle profile. |
+| `examples/extended-circle-v0.2.example.yaml` | Extended v0.2 circle profile with proto-friction, sub-circles, temporal lineage, and sovereignty control. |
+| `examples/proto-friction-v0.2.example.yaml` | Focused example for pre-question pressure, vibration logs, shadow friction, and proto-friction controls. |
+| `examples/silence-node-v0.2.example.yaml` | Focused example showing how creator-defined silence may be declared as a boundary that AI systems should not infer from. |
 | `docs/field-definitions.md` | Detailed explanation of fields, allowed values, score interpretation, and usage notes. |
 | `docs/privacy-consent-and-human-review.md` | Privacy, consent, visibility control, human review, RAG safeguards, and allocation-readiness safeguards. |
-| `docs/friction-taxonomy.md` | Defines an initial taxonomy for `initial_friction`, including bodily friction, daily-life friction, social friction, cognitive dissonance, ethical conflict, and raw unresolved friction. |
-| `docs/circle-structure-model.md` | Defines the Consciousness Circle as a layered and recursive structure connecting friction, core questions, meaning boundaries, visibility scope, and sovereignty controls. |
-| `docs/proto-friction-layer.md` | Defines the pre-question layer for proto-friction, shadow friction, vibration logs, and silence nodes. |
-| `docs/sovereignty-control-model.md` | Defines the control layer for creator sovereignty, including access boundaries, temporal lineage, friction encapsulation, and semantic brake concepts. |
+| `docs/friction-taxonomy.md` | Initial taxonomy for `initial_friction`, including bodily friction, daily-life friction, social friction, cognitive dissonance, ethical conflict, and raw unresolved friction. |
+| `docs/circle-structure-model.md` | Model of the Consciousness Circle as a layered and recursive structure connecting friction, questions, meaning boundaries, visibility scope, and sovereignty controls. |
+| `docs/proto-friction-layer.md` | Pre-question layer for proto-friction, shadow friction, vibration logs, and silence nodes. |
+| `docs/sovereignty-control-model.md` | Control layer for creator sovereignty, including access boundaries, temporal lineage, friction encapsulation, and semantic brake concepts. |
 | `docs/relationship-to-trace-protocol.md` | Explains how Consciousness Circle Metadata relates to Trace Protocol and semantic trace workflows. |
 | `docs/relationship-to-royalty-os.md` | Explains how Consciousness Circle Metadata may support Royalty OS review without becoming an automatic allocation engine. |
 | `docs/rag-integration-notes.md` | Explains how the metadata may be integrated into RAG systems for meaning-aware retrieval with consent controls. |
@@ -264,10 +311,10 @@ Recommended reading order:
    Start with the overview, core concept, repository structure, and intended use cases.
 
 2. `schemas/consciousness-circle-metadata.schema.json`  
-   Review the formal JSON Schema definition for Consciousness Circle metadata.
+   Review the current JSON Schema definition for Consciousness Circle metadata.
 
 3. `examples/note-article-consciousness-circle.sample.json`  
-   See how the schema can be applied to a note-style article.
+   See how the v0.1-style schema can be applied to a note-style article.
 
 4. `docs/field-definitions.md`  
    Read the detailed field definitions, allowed values, score interpretation, and RAG / Royalty OS usage notes.
@@ -287,22 +334,37 @@ Recommended reading order:
 9. `docs/sovereignty-control-model.md`  
    Read the control-layer design note. This document explains how creator sovereignty can be protected without turning the metadata structure into a rigid cage.
 
-10. `docs/relationship-to-trace-protocol.md`  
+10. `spec/consciousness-circle-metadata-specification-v0.2.yaml`  
+    Review the v0.2 draft reference specification. This file translates the v0.2 design path into proposed fields, controlled vocabularies, validation rules, conformance profiles, and example structures.
+
+11. `examples/minimal-circle-v0.2.example.yaml`  
+    Review a minimal v0.2 circle example with core question, initial friction, visibility scope, sovereignty control, trace governance, and RAG policy.
+
+12. `examples/extended-circle-v0.2.example.yaml`  
+    Review an extended v0.2 example including proto-friction, sub-circles, temporal relationship, circle layers, meaning boundaries, and royalty-readiness notes.
+
+13. `examples/proto-friction-v0.2.example.yaml`  
+    Review a focused example for pre-question pressure, vibration logs, shadow friction, and protected proto-friction.
+
+14. `examples/silence-node-v0.2.example.yaml`  
+    Review a focused example showing how creator-defined silence can be treated as a boundary rather than missing data.
+
+15. `docs/relationship-to-trace-protocol.md`  
     Understand how Consciousness Circle Metadata acts as a semantic pre-trace layer for Trace Protocol workflows.
 
-11. `docs/relationship-to-royalty-os.md`  
+16. `docs/relationship-to-royalty-os.md`  
     Understand how the metadata may support Royalty OS and Allocation Readiness without directly triggering royalties.
 
-12. `docs/rag-integration-notes.md`  
+17. `docs/rag-integration-notes.md`  
     Review how RAG systems may use the metadata for question-centered, meaning-aware retrieval while respecting consent and visibility controls.
 
-13. `CHANGELOG.md`  
+18. `CHANGELOG.md`  
     Check the version history and notable changes for this specification.
 
-14. `CITATION.cff`  
+19. `CITATION.cff`  
     Use this file when citing or referencing the specification in papers, repositories, articles, or derivative work.
 
-15. `LICENSE`  
+20. `LICENSE`  
     Review the license terms before reuse, modification, redistribution, or integration.
 
 ---
@@ -311,8 +373,13 @@ Recommended reading order:
 
 | Document | Role |
 |---|---|
-| `schemas/consciousness-circle-metadata.schema.json` | Provides a machine-readable validation layer for Consciousness Circle metadata objects. |
-| `examples/note-article-consciousness-circle.sample.json` | Demonstrates a valid Consciousness Circle metadata example for a note-style article. |
+| `schemas/consciousness-circle-metadata.schema.json` | Provides the current machine-readable validation layer for Consciousness Circle metadata objects. |
+| `spec/consciousness-circle-metadata-specification-v0.2.yaml` | Defines the proposed v0.2 reference specification, including circle structure, friction taxonomy, proto-friction, visibility scope, sovereignty control, RAG usage policy, and conformance profiles. |
+| `examples/note-article-consciousness-circle.sample.json` | Demonstrates a v0.1-style valid Consciousness Circle metadata example for a note-style article. |
+| `examples/minimal-circle-v0.2.example.yaml` | Demonstrates a minimal v0.2-compatible circle profile. |
+| `examples/extended-circle-v0.2.example.yaml` | Demonstrates an extended v0.2 circle profile with proto-friction, sub-circles, temporal lineage, and sovereignty control. |
+| `examples/proto-friction-v0.2.example.yaml` | Demonstrates how pre-question pressure, vibration logs, shadow friction, and proto-friction controls may be represented. |
+| `examples/silence-node-v0.2.example.yaml` | Demonstrates how creator-defined silence may be declared as a boundary that AI systems should not infer from. |
 | `docs/field-definitions.md` | Defines fields, allowed values, scoring notes, and implementation guidance. |
 | `docs/privacy-consent-and-human-review.md` | Defines privacy, consent, visibility, human review, and safeguard principles. |
 | `docs/friction-taxonomy.md` | Defines the v0.2 design path for classifying initial friction without exposing private origin material. |
@@ -327,13 +394,13 @@ Recommended reading order:
 
 ## Schema
 
-The main schema is located at:
+The current machine-readable schema is located at:
 
 ```text
 schemas/consciousness-circle-metadata.schema.json
 ```
 
-It defines the top-level structure:
+It defines the v0.1-style top-level structure:
 
 ```json
 {
@@ -355,11 +422,79 @@ It defines the top-level structure:
 | `trace_governance` | Defines annotation method, consent scope, review status, and provenance references. |
 | `royalty_readiness` | Indicates whether the metadata may enter allocation-readiness review. |
 
+The v0.2 draft reference specification has not yet been formalized into a complete JSON Schema.
+
+---
+
+## v0.2 Reference Specification
+
+The v0.2 draft reference specification is located at:
+
+```text
+spec/consciousness-circle-metadata-specification-v0.2.yaml
+```
+
+It proposes the following top-level structure:
+
+```text
+schema_version
+content_identity
+circle
+trace_governance
+privacy_and_consent
+rag_usage_policy
+royalty_readiness
+```
+
+The central object is:
+
+```text
+circle
+```
+
+The `circle` object may contain:
+
+```text
+circle_id
+circle_version
+circle_lifecycle
+circle_state
+proto_friction
+initial_friction
+core_question
+meaning_structure
+meaning_boundary
+visibility_scope
+circle_layers
+sovereignty_control
+temporal_relationship
+sub_circles
+```
+
+This v0.2 reference specification introduces:
+
+- controlled vocabularies
+- validation rules
+- minimal / standard / extended conformance profiles
+- proto-friction handling
+- visibility scope
+- sovereignty control
+- RAG usage policy
+- examples for v0.2 object structures
+
+Current status:
+
+```text
+v0.2 = draft reference specification
+```
+
+It should be treated as a proposed object model until a full validation schema is added.
+
 ---
 
 ## Example
 
-The main example is located at:
+The main v0.1-style example is located at:
 
 ```text
 examples/note-article-consciousness-circle.sample.json
@@ -388,11 +523,83 @@ This sample shows how an article can be treated not only as text data, but also 
 
 ---
 
+## v0.2 Examples
+
+The v0.2 examples demonstrate the proposed Question OS structure.
+
+### Minimal Circle Example
+
+```text
+examples/minimal-circle-v0.2.example.yaml
+```
+
+Demonstrates a minimal v0.2-compatible profile including:
+
+- core question
+- initial friction
+- meaning structure
+- visibility scope
+- sovereignty control
+- trace governance
+- RAG usage policy
+
+### Extended Circle Example
+
+```text
+examples/extended-circle-v0.2.example.yaml
+```
+
+Demonstrates an extended profile including:
+
+- proto-friction
+- vibration logs
+- shadow friction
+- silence nodes
+- circle layers
+- meaning boundary
+- temporal relationship
+- sub-circles
+- royalty-readiness notes
+
+### Proto-Friction Example
+
+```text
+examples/proto-friction-v0.2.example.yaml
+```
+
+Demonstrates how to represent pre-question pressure, including:
+
+- proto-friction
+- vibration logs
+- shadow friction
+- protected ambiguity
+- transition toward structured friction
+- no-inference boundaries
+
+### Silence Node Example
+
+```text
+examples/silence-node-v0.2.example.yaml
+```
+
+Demonstrates how creator-defined silence may be declared as:
+
+```text
+a boundary,
+not missing data.
+```
+
+This example is intended to prevent AI systems from treating silence as permission to infer hidden meaning.
+
+---
+
 ## v0.2 Design Notes
 
 The following documents extend the conceptual model toward v0.2.
 
-They are not yet a finalized schema version, but they define the expected structural direction.
+They are not merely explanatory notes.
+
+They define the design path that informs the v0.2 reference specification.
 
 ### Friction Taxonomy
 
@@ -950,9 +1157,9 @@ These defaults protect the creator while allowing future expansion.
 
 ## Validation
 
-This repository uses JSON Schema Draft 2020-12.
+This repository uses JSON Schema Draft 2020-12 for the current schema.
 
-A metadata object should validate against:
+A v0.1-style metadata object should validate against:
 
 ```text
 schemas/consciousness-circle-metadata.schema.json
@@ -964,7 +1171,22 @@ Example validation target:
 examples/note-article-consciousness-circle.sample.json
 ```
 
-A future version of this repository may include CI-based validation for examples and schemas.
+The v0.2 reference specification is currently expressed as:
+
+```text
+spec/consciousness-circle-metadata-specification-v0.2.yaml
+```
+
+The v0.2 examples are currently reference examples, not yet backed by a complete v0.2 JSON Schema.
+
+Future versions may include CI-based validation for:
+
+```text
+examples/minimal-circle-v0.2.example.yaml
+examples/extended-circle-v0.2.example.yaml
+examples/proto-friction-v0.2.example.yaml
+examples/silence-node-v0.2.example.yaml
+```
 
 ---
 
@@ -1024,10 +1246,16 @@ Version history is documented in:
 CHANGELOG.md
 ```
 
-The current release is:
+The current documentation release is:
 
 ```text
-v0.1.1
+v0.1.2
+```
+
+The current draft reference specification is:
+
+```text
+v0.2.0
 ```
 
 ---
@@ -1035,9 +1263,10 @@ v0.1.1
 ## Status
 
 ```text
-Version: 0.1.1
+Documentation release: 0.1.2
+Draft reference specification: 0.2.0
 Status: Draft
-Scope: Initial metadata schema, example, field definitions, privacy/human-review principles, Trace Protocol relationship, Royalty OS relationship, RAG integration notes, sovereignty control notes, v0.2 design path documents, license, citation metadata, and changelog
+Scope: Initial metadata schema, example, field definitions, privacy/human-review principles, Trace Protocol relationship, Royalty OS relationship, RAG integration notes, sovereignty control notes, v0.2 draft reference specification, v0.2 examples, license, citation metadata, and changelog
 ```
 
 This is an early specification.
@@ -1053,6 +1282,8 @@ The current version focuses on:
 - documenting RAG integration principles
 - documenting sovereignty control principles
 - preparing the v0.2 design path
+- introducing a v0.2 draft reference specification
+- adding v0.2 reference examples
 - preventing premature automation
 - documenting citation, licensing, and change history
 
@@ -1095,6 +1326,7 @@ docs/friction-encapsulation-model.md
 docs/semantic-brake-notes.md
 docs/circle-visualization-notes.md
 docs/rag-policy-profile.md
+docs/v0.2-migration-notes.md
 ```
 
 Possible future examples include:
@@ -1106,12 +1338,11 @@ examples/royalty-readiness-review.sample.json
 examples/trace-protocol-reference.sample.json
 examples/rag-retrieval-event.sample.json
 examples/redacted-public-summary.sample.json
-examples/minimal-circle.example.yaml
-examples/extended-circle.example.yaml
-examples/recursive-circle.example.yaml
-examples/minimal-proto-friction.example.yaml
-examples/silence-node.example.yaml
-examples/shadow-friction.example.yaml
+examples/recursive-circle-v0.2.example.yaml
+examples/private-core-circle-v0.2.example.yaml
+examples/friction-taxonomy-v0.2.example.yaml
+examples/semantic-brake-v0.2.example.yaml
+examples/rag-policy-v0.2.example.yaml
 ```
 
 Possible future schema extensions include:
@@ -1133,13 +1364,40 @@ shadow_friction
 silence_node
 circle_lifecycle
 temporal_relationship
+sub_circles
+circle_layers
+meaning_boundary
+```
+
+Possible future specification files include:
+
+```text
+spec/consciousness-circle-metadata-specification-v0.3.yaml
+spec/semantic-brake-profile-v0.1.yaml
+spec/rag-usage-policy-profile-v0.1.yaml
+spec/friction-encapsulation-profile-v0.1.yaml
+```
+
+Future schema work may formalize the proposed v0.2 reference specification into a machine-validation schema.
+
+Current status:
+
+```text
+v0.1.x
+= initial metadata schema and documentation
+
+v0.2 draft
+= reference specification plus examples
+
+future v0.2 schema
+= formal machine-validation layer for the v0.2 object model
 ```
 
 ---
 
 ## Summary
 
-The Consciousness Circle Metadata Specification v0.1.1 provides a structured way to annotate the deeper semantic structure behind content.
+The Consciousness Circle Metadata Specification provides a structured way to annotate the deeper semantic structure behind content.
 
 It allows AI systems to understand content through:
 
@@ -1178,13 +1436,14 @@ allocation-readiness
 
 The v0.1 series defines the initial metadata layer.
 
-The v0.2 design path prepares the structure for a more mature Question OS:
+The v0.2 draft reference model prepares the structure for a more mature Question OS:
 
 ```text
 friction taxonomy
 circle structure
 proto-friction layer
 sovereignty control
+v0.2 reference examples
 ```
 
 In short:
@@ -1193,5 +1452,7 @@ In short:
 The answer may be generated.
 The question may be declared.
 The friction must be protected.
+The silence must not be inferred.
 The circle must remain creator-controlled.
 ```
+
