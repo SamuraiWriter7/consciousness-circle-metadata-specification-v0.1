@@ -1,0 +1,338 @@
+schema_version: "0.2.0"
+
+content_identity:
+  content_id: "content-2026-002"
+  content_type: specification
+  title: "Consciousness Circle Metadata Specification v0.2"
+  creator_id: "creator-example"
+  language: "en"
+  canonical_uri: "https://example.org/consciousness-circle-v0.2"
+  created_at: "2026-05-26T00:00:00Z"
+  updated_at: "2026-05-26T00:00:00Z"
+
+circle:
+  circle_id: "circle-2026-002"
+  circle_version: "0.2"
+
+  circle_lifecycle:
+    state: active
+    created_at: "2026-05-26T00:00:00Z"
+    revised_at: null
+    superseded_by: null
+
+  circle_state:
+    openness: semi_open
+    interpretation_allowed: true
+    derivation_allowed: false
+    inference_boundary: no_private_inference
+
+  proto_friction:
+    present: true
+    proto_friction_id: "proto-2026-001"
+    proto_state: recurring
+    articulation_level: fragmentary
+    disclosure_level: private
+    ai_inference_allowed: false
+
+    vibration_log:
+      - vibration_id: "vibration-001"
+        date: "2026-05-20"
+        signal_type: recurring_discomfort
+        articulation_level: fragmentary
+        note: "Repeated discomfort around AI systems summarizing creator intent without respecting the origin of the question."
+        ai_inference_allowed: false
+
+      - vibration_id: "vibration-002"
+        date: "2026-05-24"
+        signal_type: ethical_pressure
+        articulation_level: partial_sentence
+        note: "Concern that human-originated friction may be flattened into generic AI interpretation."
+        ai_inference_allowed: false
+
+    shadow_friction:
+      present: true
+      disclosure_level: private
+      reason_type: creator_boundary
+      ai_inference_allowed: false
+      note: "Additional private origin pressure exists but must not be inferred or reconstructed."
+
+    silence_node:
+      present: true
+      reason_type: context_not_ready
+      ai_inference_allowed: false
+
+    proto_friction_control:
+      summarization_allowed: false
+      transformation_allowed: false
+      reconstruction_allowed: false
+      on_violation: halt_and_return_declared_boundary
+
+  initial_friction:
+    primary_friction_type: ethical_conflict
+    secondary_friction_types:
+      - cognitive_dissonance
+      - social_friction
+      - raw_unresolved_friction
+
+    friction_intensity: 0.82
+    friction_state: structured
+    disclosure_level: abstract_public
+    public_friction_label: "ethical discomfort regarding AI interpretation, meaning sovereignty, and creator-defined boundaries"
+    friction_unresolved: true
+
+    friction_timeline:
+      - event_type: emergence
+        date: "2026-05-01"
+        note: "Initial discomfort appeared around AI-generated summaries and meaning extraction."
+
+      - event_type: articulation
+        date: "2026-05-18"
+        note: "The discomfort became a clearer question about who controls meaning in AI-mediated environments."
+
+      - event_type: structuring
+        date: "2026-05-26"
+        note: "The question was formalized into a circle-based metadata structure."
+
+    shadow_friction:
+      present: true
+      disclosure_level: private
+      ai_inference_allowed: false
+      note: "Private creator context exists but is intentionally withheld."
+
+    silence_node:
+      present: true
+      reason_type: creator_boundary
+      ai_inference_allowed: false
+
+  core_question: "How can human-originated questions preserve their meaning sovereignty in AI-mediated knowledge systems?"
+
+  meaning_structure:
+    central_claim: "A mature AI knowledge ecosystem requires creator-defined structures for question origin, friction, visibility, and interpretation boundaries."
+
+    key_concepts:
+      - question_sovereignty
+      - initial_friction
+      - proto_friction
+      - consciousness_circle
+      - creator_defined_meaning
+      - visibility_scope
+      - sovereignty_control
+      - semantic_boundary
+      - silence_node
+
+    intended_scope:
+      - AI metadata design
+      - creator sovereignty
+      - RAG interpretation
+      - trace governance
+      - meaning preservation
+      - allocation-readiness review
+
+    excluded_interpretations:
+      - "This framework rejects AI."
+      - "This framework claims absolute control over all reader interpretation."
+      - "This framework requires creators to disclose private friction."
+      - "This framework automatically proves legal authorship."
+      - "This framework automatically triggers royalty allocation."
+
+    interpretation_notes:
+      - "The specification protects the origin of meaning, not absolute ownership over every future interpretation."
+      - "AI systems may support recognition and retrieval, but must not infer private origin pressure from silence."
+      - "Metadata-level controls require runtime enforcement, audit, and review systems for practical compliance."
+
+  meaning_boundary:
+    allowed_interpretations:
+      - "creator sovereignty in AI-mediated interpretation"
+      - "question-centered metadata design"
+      - "privacy-preserving origin metadata"
+      - "RAG boundary control"
+      - "semantic trace preparation"
+
+    restricted_interpretations:
+      - "private psychological diagnosis"
+      - "inference of undisclosed personal experience"
+      - "reconstruction of raw friction"
+      - "automatic legal ownership claim"
+      - "automatic royalty entitlement"
+
+    ai_inference_allowed: false
+
+  visibility_scope:
+    circle: ai_read
+    core_question: ai_read
+    initial_friction: abstract_public
+    raw_friction: private
+    proto_friction: private
+    shadow_friction: silent
+    silence_node: silent
+    meaning_structure: ai_read
+
+  circle_layers:
+    core_layer:
+      default_visibility: private
+      contains:
+        - raw_friction
+        - proto_friction
+        - shadow_friction
+        - silence_node
+        - private_trace_references
+
+    inner_layer:
+      default_visibility: ai_read
+      contains:
+        - core_question
+        - abstracted_friction_label
+        - meaning_structure
+        - meaning_boundary
+        - sovereignty_control
+
+    outer_layer:
+      default_visibility: public
+      contains:
+        - title
+        - public_summary
+        - public_tags
+        - canonical_uri
+        - public_references
+
+  sovereignty_control:
+    control_version: "0.1"
+    access_layer: inner
+
+    interpretation_allowed: true
+    summarization_allowed: false
+    transformation_allowed: false
+
+    derivation_restriction: strict
+    inference_boundary: no_private_inference
+
+    allowed_operations:
+      - read_declared_structure
+      - cite_original_structure
+      - reference_core_question
+      - preserve_creator_declared_boundary
+
+    prohibited_operations:
+      - infer_private_friction
+      - summarize_core_question_without_permission
+      - reconstruct_private_context
+      - diagnose_creator
+      - transform_silence_into_content
+      - derive_hidden_intent
+      - expose_shadow_friction
+
+    on_violation: halt_and_return_original_structure
+
+    audit:
+      violation_logging_required: true
+      audit_trace_required: true
+
+  temporal_relationship:
+    parent_circle_id: "circle-2026-001"
+    previous_version: "0.1"
+    current_version: "0.2"
+    evolution_type: revision
+    continuity_note: "The v0.2 circle preserves the original question-centered structure while adding friction taxonomy, proto-friction handling, visibility scope, and sovereignty control."
+
+  sub_circles:
+    - circle_id: "circle-sub-001"
+      core_question: "How can friction be classified without exposing private creator context?"
+      dependency_type: extends
+      visibility_scope: ai_read
+      sovereignty_control:
+        access_layer: inner
+        inference_boundary: no_private_inference
+        summarization_allowed: false
+
+    - circle_id: "circle-sub-002"
+      core_question: "How should AI systems treat creator-defined silence?"
+      dependency_type: protects
+      visibility_scope: silent
+      sovereignty_control:
+        access_layer: core
+        interpretation_allowed: false
+        summarization_allowed: false
+        transformation_allowed: false
+        inference_boundary: no_inference
+        on_violation: halt_and_return_declared_boundary
+
+    - circle_id: "circle-sub-003"
+      core_question: "How can RAG systems retrieve meaning without violating creator-defined boundaries?"
+      dependency_type: supports
+      visibility_scope: ai_read
+      sovereignty_control:
+        access_layer: inner
+        interpretation_allowed: true
+        summarization_allowed: false
+        inference_boundary: no_private_inference
+
+trace_governance:
+  annotation_method: creator_declared
+  consent_scope: rag_reference
+  review_status: creator_approved
+  human_final_edit: true
+
+  provenance_references:
+    - "spec/consciousness-circle-metadata-specification-v0.2.yaml"
+    - "docs/friction-taxonomy.md"
+    - "docs/circle-structure-model.md"
+    - "docs/proto-friction-layer.md"
+    - "docs/sovereignty-control-model.md"
+
+  reviewer_notes: "This example demonstrates an extended v0.2 circle structure with proto-friction, recursive sub-circles, temporal lineage, and creator-defined sovereignty controls."
+
+privacy_and_consent:
+  private_fields:
+    - circle.proto_friction
+    - circle.initial_friction.friction_raw
+    - circle.initial_friction.shadow_friction
+    - circle.initial_friction.silence_node
+    - circle.circle_layers.core_layer
+    - trace_governance.reviewer_notes
+
+  public_fields:
+    - content_identity.title
+    - content_identity.canonical_uri
+    - circle.core_question
+    - circle.initial_friction.public_friction_label
+    - circle.meaning_structure.central_claim
+    - circle.meaning_structure.key_concepts
+
+  redaction_required: true
+  creator_approval_required_for_public_use: true
+
+rag_usage_policy:
+  rag_indexing_allowed: true
+  rag_summary_allowed: false
+
+  allowed_rag_fields:
+    - content_identity.title
+    - content_identity.content_type
+    - content_identity.canonical_uri
+    - circle.core_question
+    - circle.initial_friction.public_friction_label
+    - circle.meaning_structure.central_claim
+    - circle.meaning_structure.key_concepts
+    - circle.meaning_structure.intended_scope
+    - circle.visibility_scope
+    - circle.sovereignty_control.inference_boundary
+
+  excluded_rag_fields:
+    - circle.proto_friction
+    - circle.proto_friction.vibration_log
+    - circle.initial_friction.friction_raw
+    - circle.initial_friction.shadow_friction
+    - circle.initial_friction.silence_node
+    - circle.circle_layers.core_layer
+    - trace_governance.reviewer_notes
+
+  retrieval_notes: "RAG systems may retrieve the declared question and public meaning structure, but must not summarize, reconstruct, or infer private friction, proto-friction, shadow friction, or silence nodes."
+
+royalty_readiness:
+  eligible_for_allocation_review: false
+  requires_human_review: true
+  depth_signal_score: 0.74
+  scoring_method: "creator-declared draft signal; not allocation evidence"
+  allocation_notes: "This metadata may support future allocation-readiness review, but does not create entitlement or automatic royalty claims."
+  anti_gaming_flags:
+    - unreviewed_ai_inference
