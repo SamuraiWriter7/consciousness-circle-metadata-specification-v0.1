@@ -1,3 +1,99 @@
+## [0.1.3] - 2026-05-26
+
+### Added
+
+- Added `spec/consciousness-circle-metadata-specification-v0.2.yaml`.
+  - Introduces the v0.2 draft reference specification.
+  - Defines the proposed object model for the structured Question OS layer.
+  - Adds proposed top-level sections including:
+    - `schema_version`
+    - `content_identity`
+    - `circle`
+    - `trace_governance`
+    - `privacy_and_consent`
+    - `rag_usage_policy`
+    - `royalty_readiness`
+  - Introduces controlled vocabularies for friction types, visibility scope, circle lifecycle, proto-friction states, sovereignty controls, inference boundaries, and violation behavior.
+  - Defines minimal, standard, and extended conformance profiles.
+
+- Added `examples/minimal-circle-v0.2.example.yaml`.
+  - Demonstrates a minimal v0.2-compatible circle profile.
+  - Includes core question, initial friction, meaning structure, visibility scope, sovereignty control, trace governance, privacy controls, RAG usage policy, and royalty-readiness safeguards.
+
+- Added `examples/extended-circle-v0.2.example.yaml`.
+  - Demonstrates an extended v0.2 circle profile.
+  - Includes proto-friction, vibration logs, shadow friction, silence nodes, circle layers, meaning boundaries, temporal relationships, recursive sub-circles, sovereignty control, and royalty-readiness notes.
+
+- Added `examples/proto-friction-v0.2.example.yaml`.
+  - Demonstrates how pre-question pressure may be represented.
+  - Includes proto-friction, vibration logs, shadow friction, silence nodes, protected ambiguity, and strict AI inference boundaries.
+
+- Added `examples/silence-node-v0.2.example.yaml`.
+  - Demonstrates how creator-defined silence may be declared as a boundary.
+  - Clarifies that silence should not be treated as missing data or permission for AI inference.
+
+### Changed
+
+- Updated `README.md` to reflect the new v0.2 draft reference materials.
+- Added `spec/` to the repository structure.
+- Added v0.2 example files to the repository structure.
+- Updated the README reading order to include:
+  - `spec/consciousness-circle-metadata-specification-v0.2.yaml`
+  - `examples/minimal-circle-v0.2.example.yaml`
+  - `examples/extended-circle-v0.2.example.yaml`
+  - `examples/proto-friction-v0.2.example.yaml`
+  - `examples/silence-node-v0.2.example.yaml`
+- Updated the README `Key Documents`, `v0.2 Reference Specification`, `v0.2 Examples`, `Validation`, `Status`, and `Future Extensions` sections.
+
+### Clarified
+
+- Clarified that v0.2 is currently a draft reference specification, not yet a finalized JSON Schema.
+- Clarified that the current machine-readable schema remains the v0.1-style schema located at:
+
+```text
+schemas/consciousness-circle-metadata.schema.json
+
+Clarified that the v0.2 YAML examples are reference examples and are not yet backed by a complete v0.2 JSON Schema.
+Clarified the current project status:
+v0.1.x
+= initial metadata schema and documentation
+
+v0.2 draft
+= reference specification plus examples
+
+future v0.2 schema
+= formal machine-validation layer for the v0.2 object model
+Clarified that metadata existence does not equal permission for AI systems to summarize, infer, transform, or expose private creator-defined structures.
+Clarified that proto-friction, shadow friction, and silence nodes should remain private or protected by default.
+Clarified that sovereignty control declarations require runtime enforcement, audit, and review layers for practical compliance.
+Notes
+
+This release adds the v0.2 draft reference specification and example set.
+
+No finalized v0.2 JSON Schema is included in this release.
+
+No breaking validation changes are introduced to the existing v0.1-style schema.
+
+The existing schema remains:
+
+schemas/consciousness-circle-metadata.schema.json
+
+The new draft reference specification is:
+
+spec/consciousness-circle-metadata-specification-v0.2.yaml
+
+The new v0.2 reference examples are:
+
+examples/minimal-circle-v0.2.example.yaml
+examples/extended-circle-v0.2.example.yaml
+examples/proto-friction-v0.2.example.yaml
+examples/silence-node-v0.2.example.yaml
+
+Future work may formalize the v0.2 object model into:
+
+schemas/consciousness-circle-metadata-v0.2.schema.json
+
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
