@@ -1,10 +1,10 @@
 # Consciousness Circle Metadata Specification v0.1
 
-A metadata specification for annotating the question, friction, surface facts, deep context, relational dynamics, trace governance, and allocation-readiness of a content item in AI-mediated knowledge ecosystems.
+A metadata specification for annotating the question, friction, surface facts, deep context, relational dynamics, sovereignty control, trace governance, and allocation-readiness of a content item in AI-mediated knowledge ecosystems.
 
 This specification is designed for environments where human-created knowledge is increasingly read, retrieved, summarized, referenced, transformed, and recomposed by AI systems.
 
-It provides a structured way to describe not only what a content item says, but also the question, tension, semantic depth, and interpretive movement behind it.
+It provides a structured way to describe not only what a content item says, but also the question, tension, semantic depth, interpretive movement, and creator-defined meaning boundaries behind it.
 
 ---
 
@@ -21,6 +21,7 @@ Its purpose is to support:
 - creator-controlled deep metadata
 - consent-aware RAG workflows
 - trace governance
+- sovereignty control
 - allocation-readiness review
 - privacy-preserving semantic metadata
 - future Royalty OS and Trace Protocol workflows
@@ -52,6 +53,8 @@ surface facts
 deep context
 layer connections
 rotation dynamics
+visibility scope
+sovereignty control
 trace governance
 royalty-readiness signals
 ```
@@ -76,6 +79,8 @@ deep layer
 connections
 ↓
 rotation dynamics
+↓
+sovereignty control
 ```
 
 ### Center
@@ -143,6 +148,53 @@ from criticism to system design
 from tension to traceable structure
 ```
 
+### Sovereignty Control
+
+Sovereignty control defines how creator-declared meaning structures may be accessed, interpreted, summarized, transformed, or protected by AI systems.
+
+It helps prevent creator sovereignty from becoming either:
+
+```text
+too weak = decorative metadata
+too rigid = a cage
+```
+
+The intended model is:
+
+```text
+creator sovereignty as a living membrane
+```
+
+---
+
+## v0.2 Design Direction
+
+The current v0.1 series defines the minimum metadata structure.
+
+The v0.2 design path expands the specification from a minimal meaning record into a structured Question OS layer by introducing:
+
+- friction taxonomy
+- recursive circle structure
+- proto-friction handling
+- silence nodes
+- visibility scope
+- sovereignty control
+
+Conceptually:
+
+```text
+v0.1
+= minimum Consciousness Circle metadata
+
+v0.2 design path
+= structured Question OS layer
+
+v0.3 and beyond
+= runtime control, audit, RAG policy, trace integration, and review systems
+```
+
+The v0.2 design documents are currently exploratory design notes, not yet a finalized schema version.
+
 ---
 
 ## Repository Structure
@@ -153,19 +205,36 @@ from tension to traceable structure
 ├── LICENSE
 ├── CITATION.cff
 ├── CHANGELOG.md
+│
 ├── schemas/
 │   └── consciousness-circle-metadata.schema.json
+│
 ├── examples/
 │   └── note-article-consciousness-circle.sample.json
+│
 └── docs/
     ├── field-definitions.md
     ├── privacy-consent-and-human-review.md
     ├── relationship-to-trace-protocol.md
     ├── relationship-to-royalty-os.md
-    └── rag-integration-notes.md
+    ├── rag-integration-notes.md
+    ├── sovereignty-control-model.md
+    ├── friction-taxonomy.md
+    ├── circle-structure-model.md
+    └── proto-friction-layer.md
 ```
 
-### Key Files
+### Directory Overview
+
+| Path | Description |
+|---|---|
+| `schemas/` | JSON Schema definitions for validating Consciousness Circle metadata objects. |
+| `examples/` | Example metadata objects showing how the specification may be used. |
+| `docs/` | Design notes and relationship documents explaining how this specification connects to trace systems, RAG systems, creator sovereignty, friction taxonomy, circle structure, and proto-friction handling. |
+
+---
+
+## Key Files
 
 | Path | Description |
 |---|---|
@@ -177,6 +246,10 @@ from tension to traceable structure
 | `examples/note-article-consciousness-circle.sample.json` | Example metadata object for a note-style article. |
 | `docs/field-definitions.md` | Detailed explanation of fields, allowed values, score interpretation, and usage notes. |
 | `docs/privacy-consent-and-human-review.md` | Privacy, consent, visibility control, human review, RAG safeguards, and allocation-readiness safeguards. |
+| `docs/friction-taxonomy.md` | Defines an initial taxonomy for `initial_friction`, including bodily friction, daily-life friction, social friction, cognitive dissonance, ethical conflict, and raw unresolved friction. |
+| `docs/circle-structure-model.md` | Defines the Consciousness Circle as a layered and recursive structure connecting friction, core questions, meaning boundaries, visibility scope, and sovereignty controls. |
+| `docs/proto-friction-layer.md` | Defines the pre-question layer for proto-friction, shadow friction, vibration logs, and silence nodes. |
+| `docs/sovereignty-control-model.md` | Defines the control layer for creator sovereignty, including access boundaries, temporal lineage, friction encapsulation, and semantic brake concepts. |
 | `docs/relationship-to-trace-protocol.md` | Explains how Consciousness Circle Metadata relates to Trace Protocol and semantic trace workflows. |
 | `docs/relationship-to-royalty-os.md` | Explains how Consciousness Circle Metadata may support Royalty OS review without becoming an automatic allocation engine. |
 | `docs/rag-integration-notes.md` | Explains how the metadata may be integrated into RAG systems for meaning-aware retrieval with consent controls. |
@@ -202,23 +275,53 @@ Recommended reading order:
 5. `docs/privacy-consent-and-human-review.md`  
    Review privacy, consent, visibility control, human final edit, AI-inferred metadata handling, and anti-gaming safeguards.
 
-6. `docs/relationship-to-trace-protocol.md`  
-   Understand how Consciousness Circle Metadata acts as a semantic pre-trace layer for Trace Protocol workflows.
+6. `docs/friction-taxonomy.md`  
+   Read the initial friction taxonomy. This document explains how `initial_friction` may be classified without forcing creators to over-disclose private origin material.
 
-7. `docs/relationship-to-royalty-os.md`  
-   Understand how the metadata may support Royalty OS and Allocation Readiness without directly triggering royalties.
+7. `docs/circle-structure-model.md`  
+   Review the circle structure model. This document explains how friction, questions, meaning boundaries, visibility scope, and sovereignty controls form a layered Consciousness Circle.
 
-8. `docs/rag-integration-notes.md`  
-   Review how RAG systems may use the metadata for question-centered, meaning-aware retrieval while respecting consent and visibility controls.
+8. `docs/proto-friction-layer.md`  
+   Read the proto-friction layer design note. This document explains how pre-verbal friction, silence, shadow friction, and early meaning pressure may be preserved before they become structured questions.
 
-9. `CHANGELOG.md`  
-   Check the version history and notable changes for this specification.
+9. `docs/sovereignty-control-model.md`  
+   Read the control-layer design note. This document explains how creator sovereignty can be protected without turning the metadata structure into a rigid cage.
 
-10. `CITATION.cff`  
+10. `docs/relationship-to-trace-protocol.md`  
+    Understand how Consciousness Circle Metadata acts as a semantic pre-trace layer for Trace Protocol workflows.
+
+11. `docs/relationship-to-royalty-os.md`  
+    Understand how the metadata may support Royalty OS and Allocation Readiness without directly triggering royalties.
+
+12. `docs/rag-integration-notes.md`  
+    Review how RAG systems may use the metadata for question-centered, meaning-aware retrieval while respecting consent and visibility controls.
+
+13. `CHANGELOG.md`  
+    Check the version history and notable changes for this specification.
+
+14. `CITATION.cff`  
     Use this file when citing or referencing the specification in papers, repositories, articles, or derivative work.
 
-11. `LICENSE`  
+15. `LICENSE`  
     Review the license terms before reuse, modification, redistribution, or integration.
+
+---
+
+## Key Documents
+
+| Document | Role |
+|---|---|
+| `schemas/consciousness-circle-metadata.schema.json` | Provides a machine-readable validation layer for Consciousness Circle metadata objects. |
+| `examples/note-article-consciousness-circle.sample.json` | Demonstrates a valid Consciousness Circle metadata example for a note-style article. |
+| `docs/field-definitions.md` | Defines fields, allowed values, scoring notes, and implementation guidance. |
+| `docs/privacy-consent-and-human-review.md` | Defines privacy, consent, visibility, human review, and safeguard principles. |
+| `docs/friction-taxonomy.md` | Defines the v0.2 design path for classifying initial friction without exposing private origin material. |
+| `docs/circle-structure-model.md` | Defines the v0.2 design path for modeling Consciousness Circle metadata as a layered, recursive meaning structure. |
+| `docs/proto-friction-layer.md` | Defines the v0.2 design path for recording pre-question pressure, shadow friction, vibration logs, and silence nodes. |
+| `docs/sovereignty-control-model.md` | Defines the control layer for creator sovereignty, including access boundaries, temporal lineage, friction encapsulation, and semantic brake concepts. |
+| `docs/relationship-to-trace-protocol.md` | Explains how Consciousness Circle Metadata relates to trace records, origin tracking, and provenance systems. |
+| `docs/relationship-to-royalty-os.md` | Explains how declared meaning structures may connect to royalty, allocation, and creator value-circulation models. |
+| `docs/rag-integration-notes.md` | Provides notes on how AI retrieval systems may consume or respect the metadata. |
 
 ---
 
@@ -285,6 +388,123 @@ This sample shows how an article can be treated not only as text data, but also 
 
 ---
 
+## v0.2 Design Notes
+
+The following documents extend the conceptual model toward v0.2.
+
+They are not yet a finalized schema version, but they define the expected structural direction.
+
+### Friction Taxonomy
+
+See:
+
+```text
+docs/friction-taxonomy.md
+```
+
+This document defines an initial taxonomy for `initial_friction`.
+
+Suggested friction types include:
+
+```text
+bodily_friction
+daily_life_friction
+social_friction
+cognitive_dissonance
+ethical_conflict
+raw_unresolved_friction
+```
+
+The goal is not to classify the creator.
+
+The goal is to classify the origin pressure behind a question.
+
+### Circle Structure Model
+
+See:
+
+```text
+docs/circle-structure-model.md
+```
+
+This document defines Consciousness Circle metadata as a layered and recursive meaning structure.
+
+Conceptual flow:
+
+```text
+initial_friction
+↓
+core_question
+↓
+meaning_structure
+↓
+visibility_scope
+↓
+sovereignty_control
+```
+
+The circle model supports:
+
+- core layer
+- inner layer
+- outer layer
+- circle depth
+- visibility scope
+- recursive sub-circles
+- silence nodes
+- temporal relationships
+- circle lifecycle states
+
+### Proto-Friction Layer
+
+See:
+
+```text
+docs/proto-friction-layer.md
+```
+
+This document defines the layer before `initial_friction`.
+
+It supports:
+
+- proto-friction
+- shadow friction
+- vibration logs
+- silence nodes
+- pre-verbal pressure
+- creator-controlled ambiguity
+- transition into structured friction
+
+The purpose is to protect meaning before it becomes language.
+
+### Sovereignty Control Model
+
+See:
+
+```text
+docs/sovereignty-control-model.md
+```
+
+This document defines how creator-declared meaning structures may be accessed, interpreted, summarized, transformed, or protected.
+
+It introduces concepts such as:
+
+- multi-circle access control
+- temporal lineage control
+- friction encapsulation
+- semantic brake
+- inference boundaries
+- violation behavior
+
+The core principle is:
+
+```text
+Sovereignty without control becomes a cage.
+Sovereignty with control becomes a membrane.
+```
+
+---
+
 ## Privacy and Consent
 
 This specification may include sensitive interpretive metadata.
@@ -300,6 +520,10 @@ deep.interpretive_summary
 deep.personal_resolution
 reviewer_notes
 allocation_notes
+proto_friction
+shadow_friction
+silence_node
+sovereignty_control
 ```
 
 For this reason, the specification includes:
@@ -312,6 +536,8 @@ For this reason, the specification includes:
 - anti-gaming flags
 - dispute handling notes
 - allocation-readiness safeguards
+- sovereignty control
+- AI inference boundaries
 
 Publishing an article does not automatically mean that the creator has consented to expose deep-layer metadata.
 
@@ -353,6 +579,48 @@ The specification is designed to support traceable meaning, not automated inner-
 
 ---
 
+## Sovereignty Control Principle
+
+The specification is also built around a sovereignty control principle:
+
+```text
+AI may read permitted structures.
+AI must not infer beyond declared boundaries.
+```
+
+Creator-declared metadata may include public, private, abstract, encrypted, or silent layers.
+
+AI systems should not treat missing information as permission to infer.
+
+In particular, systems should respect:
+
+```text
+visibility_scope
+consent_scope
+human_final_edit
+review_status
+sovereignty_control
+ai_inference_allowed
+silence_node
+```
+
+A creator may declare that something exists but should not be reconstructed.
+
+This is especially important for:
+
+- raw friction
+- proto-friction
+- shadow friction
+- private origin notes
+- silence nodes
+- unresolved meaning pressure
+
+The goal is not to prevent all interpretation.
+
+The goal is to preserve the creator’s declared boundary.
+
+---
+
 ## RAG Usage
 
 In RAG systems, this metadata can support retrieval beyond simple keyword or vector similarity.
@@ -371,6 +639,8 @@ resonance points
 depth signal score
 review status
 consent scope
+visibility scope
+sovereignty control
 ```
 
 Example filter logic:
@@ -390,6 +660,31 @@ For detailed guidance, see:
 
 ```text
 docs/rag-integration-notes.md
+```
+
+---
+
+## RAG Boundary Principle
+
+RAG systems should not treat all metadata as equally retrievable.
+
+Suggested behavior:
+
+| Metadata Area | RAG Behavior |
+|---|---|
+| Public surface metadata | May be indexed if consent permits. |
+| Creator-approved summary | May be retrieved if visibility allows. |
+| Deep context | Should require explicit permission. |
+| Initial friction | Should respect disclosure level. |
+| Proto-friction | Private by default. |
+| Shadow friction | Should not be inferred from. |
+| Silence node | Should be treated as a boundary, not missing data. |
+| Sovereignty control | Should guide summarization, transformation, and inference behavior. |
+
+The core rule is:
+
+```text
+Existence does not equal permission.
 ```
 
 ---
@@ -490,6 +785,8 @@ Important safeguards:
 - high intensity does not equal entitlement
 - AI-estimated scores require review
 - allocation decisions must remain separate from metadata annotation
+- sovereignty controls should be considered before reuse
+- creator boundaries should be respected before allocation review
 
 The core principle is:
 
@@ -514,6 +811,7 @@ intensity
 connection strength
 openness_score
 certainty_level
+friction_intensity
 ```
 
 The schema therefore supports anti-gaming flags such as:
@@ -544,6 +842,8 @@ Do not extract inner meaning without consent.
 Do not expose deep metadata without visibility control.
 Do not convert semantic depth into automatic entitlement.
 Do not override the creator’s final interpretation.
+Do not infer private friction from silence.
+Do not treat ambiguity as permission to reconstruct hidden meaning.
 ```
 
 The Consciousness Circle is not:
@@ -554,6 +854,8 @@ The Consciousness Circle is not:
 - a legal authorship proof
 - an automatic royalty engine
 - a persuasion targeting system
+- a tool for extracting hidden motives
+- a mechanism for forcing creators to disclose private friction
 
 It is:
 
@@ -562,6 +864,7 @@ It is:
 - a RAG enhancement layer
 - a creator-controlled annotation format
 - an allocation-readiness signal layer
+- a sovereignty control layer
 - a bridge between content, context, trace, and review
 
 ---
@@ -581,6 +884,8 @@ main question
 deep context
 resonance points
 surface/deep relationships
+visibility scope
+sovereignty controls
 ```
 
 ### 3. Trace Protocol Integration
@@ -599,6 +904,14 @@ Multiple AI models, human reviewers, or domain perspectives can review the same 
 
 RAG systems can use creator-approved metadata to retrieve not only relevant text, but also relevant questions, semantic movement, and contextual structure.
 
+### 7. Question-Centered Indexing
+
+Systems can index content by the question that generated it, rather than only by keywords, topics, or surface summaries.
+
+### 8. Creator Sovereignty Control
+
+Creators can define which parts of their meaning structure may be public, AI-readable, summary-only, private, encrypted, or silent.
+
 ---
 
 ## Minimal Safe Implementation
@@ -614,6 +927,8 @@ review status
 annotation method
 provenance references
 anti-gaming flags
+sovereignty control
+AI inference boundaries
 ```
 
 Recommended defaults:
@@ -626,6 +941,7 @@ deep.visibility = restricted
 bodily_sensation.visibility = private
 eligible_for_allocation_review = false
 requires_human_review = true
+ai_inference_allowed = false for private or silent fields
 ```
 
 These defaults protect the creator while allowing future expansion.
@@ -665,8 +981,10 @@ This specification is designed to be compatible with or extendable toward:
 - creator-controlled metadata systems
 - provenance and audit systems
 - semantic indexing systems
+- sovereignty control systems
+- dispute and review systems
 
-It can be used independently, but its full value appears when connected to trace, review, retrieval, and allocation-readiness layers.
+It can be used independently, but its full value appears when connected to trace, review, retrieval, control, and allocation-readiness layers.
 
 ---
 
@@ -719,7 +1037,7 @@ v0.1.1
 ```text
 Version: 0.1.1
 Status: Draft
-Scope: Initial metadata schema, example, field definitions, privacy/human-review principles, Trace Protocol relationship, Royalty OS relationship, RAG integration notes, license, citation metadata, and changelog
+Scope: Initial metadata schema, example, field definitions, privacy/human-review principles, Trace Protocol relationship, Royalty OS relationship, RAG integration notes, sovereignty control notes, v0.2 design path documents, license, citation metadata, and changelog
 ```
 
 This is an early specification.
@@ -733,6 +1051,8 @@ The current version focuses on:
 - documenting relationship to Trace Protocol
 - documenting relationship to Royalty OS
 - documenting RAG integration principles
+- documenting sovereignty control principles
+- preparing the v0.2 design path
 - preventing premature automation
 - documenting citation, licensing, and change history
 
@@ -753,6 +1073,8 @@ This specification does not aim to:
 - define a complete RAG architecture
 - define a complete Trace Protocol schema
 - define a complete Royalty OS payment engine
+- enforce runtime compliance by metadata alone
+- force creators to disclose private friction
 
 It is a practical metadata specification, not a claim about the nature of consciousness.
 
@@ -769,6 +1091,10 @@ docs/semantic-epicenter-layer.md
 docs/dispute-handling-notes.md
 docs/redaction-and-public-summary.md
 docs/platform-implementation-guide.md
+docs/friction-encapsulation-model.md
+docs/semantic-brake-notes.md
+docs/circle-visualization-notes.md
+docs/rag-policy-profile.md
 ```
 
 Possible future examples include:
@@ -780,6 +1106,12 @@ examples/royalty-readiness-review.sample.json
 examples/trace-protocol-reference.sample.json
 examples/rag-retrieval-event.sample.json
 examples/redacted-public-summary.sample.json
+examples/minimal-circle.example.yaml
+examples/extended-circle.example.yaml
+examples/recursive-circle.example.yaml
+examples/minimal-proto-friction.example.yaml
+examples/silence-node.example.yaml
+examples/shadow-friction.example.yaml
 ```
 
 Possible future schema extensions include:
@@ -794,6 +1126,13 @@ depth_signal_breakdown
 semantic_resonance_map
 rag_usage_policy
 allocation_review_state
+visibility_scope
+sovereignty_control
+proto_friction
+shadow_friction
+silence_node
+circle_lifecycle
+temporal_relationship
 ```
 
 ---
@@ -812,13 +1151,47 @@ It allows AI systems to understand content through:
 - the governance that protects it
 - the retrieval layer that uses it carefully
 - the review layer that prevents abuse
+- the sovereignty controls that define interpretation boundaries
 
 Its purpose is simple:
 
 ```text
-Make meaning traceable.
-Keep the creator sovereign.
-Retrieve meaning with consent.
-Separate depth from automatic entitlement.
-Prepare knowledge for AI-era retrieval, trace, and value circulation.
+to preserve the human-originated structure of meaning
+without exposing private depth,
+without automating entitlement,
+and without allowing AI systems to override creator-defined interpretation.
+```
+
+The Consciousness Circle is a bridge between:
+
+```text
+content
+context
+question
+friction
+trace
+retrieval
+review
+sovereignty
+allocation-readiness
+```
+
+The v0.1 series defines the initial metadata layer.
+
+The v0.2 design path prepares the structure for a more mature Question OS:
+
+```text
+friction taxonomy
+circle structure
+proto-friction layer
+sovereignty control
+```
+
+In short:
+
+```text
+The answer may be generated.
+The question may be declared.
+The friction must be protected.
+The circle must remain creator-controlled.
 ```
