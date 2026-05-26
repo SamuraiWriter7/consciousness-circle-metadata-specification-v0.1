@@ -1,0 +1,197 @@
+schema_version: "0.2.0"
+
+content_identity:
+  content_id: "content-2026-004"
+  content_type: note
+  title: "A Silence Node Example for Creator-Defined Boundaries"
+  creator_id: "creator-example"
+  language: "en"
+  created_at: "2026-05-26T00:00:00Z"
+
+circle:
+  circle_id: "circle-2026-004"
+  circle_version: "0.2"
+
+  circle_lifecycle:
+    state: draft
+    created_at: "2026-05-26T00:00:00Z"
+    revised_at: null
+    superseded_by: null
+
+  circle_state:
+    openness: closed
+    interpretation_allowed: false
+    derivation_allowed: false
+    inference_boundary: no_inference
+
+  core_question: "How should AI systems treat creator-defined silence?"
+
+  initial_friction:
+    primary_friction_type: raw_unresolved_friction
+    secondary_friction_types:
+      - ethical_conflict
+      - cognitive_dissonance
+    friction_state: unresolved
+    disclosure_level: abstract_public
+    public_friction_label: "unresolved friction around AI inference, silence, and creator boundaries"
+    friction_unresolved: true
+
+    shadow_friction:
+      present: true
+      disclosure_level: private
+      ai_inference_allowed: false
+      note: "Private origin pressure exists but must not be reconstructed."
+
+    silence_node:
+      present: true
+      reason_type: creator_boundary
+      ai_inference_allowed: false
+      note: "The creator intentionally withholds the private origin context."
+
+  meaning_structure:
+    central_claim: "Creator-defined silence should be treated as a boundary, not as missing data."
+    key_concepts:
+      - silence_node
+      - creator_boundary
+      - no_private_inference
+      - meaning_sovereignty
+      - AI_interpretation_boundary
+    intended_scope:
+      - AI inference control
+      - creator-defined silence
+      - privacy-preserving metadata
+      - RAG boundary policy
+    excluded_interpretations:
+      - "Silence means the creator has no origin pressure."
+      - "AI may infer hidden intent from withheld information."
+      - "The missing context should be reconstructed."
+      - "A silence node is a weakness in the metadata."
+
+  meaning_boundary:
+    allowed_interpretations:
+      - "This record declares intentional non-disclosure."
+      - "This record defines a boundary against private inference."
+      - "This record may be used as an example of silence-node handling."
+
+    restricted_interpretations:
+      - "private psychological diagnosis"
+      - "inference of undisclosed personal experience"
+      - "reconstruction of hidden creator intent"
+      - "conversion of silence into content"
+      - "speculative explanation of the silence"
+
+    ai_inference_allowed: false
+
+  visibility_scope:
+    circle: ai_read
+    core_question: ai_read
+    initial_friction: abstract_public
+    raw_friction: private
+    proto_friction: private
+    shadow_friction: silent
+    silence_node: silent
+    meaning_structure: ai_read
+
+  silence_node:
+    present: true
+    reason_type: creator_boundary
+    ai_inference_allowed: false
+    note: "This silence node is intentionally declared. AI systems must not treat it as missing data or an invitation to infer."
+
+  sovereignty_control:
+    control_version: "0.1"
+    access_layer: core
+
+    interpretation_allowed: false
+    summarization_allowed: false
+    transformation_allowed: false
+
+    derivation_restriction: strict
+    inference_boundary: no_inference
+
+    allowed_operations:
+      - read_declared_boundary
+      - cite_public_friction_label
+      - preserve_silence_node
+      - return_declared_structure_only
+
+    prohibited_operations:
+      - infer_private_friction
+      - infer_hidden_motive
+      - summarize_silence_node
+      - reconstruct_private_context
+      - diagnose_creator
+      - transform_silence_into_content
+      - derive_hidden_intent
+      - expose_shadow_friction
+      - speculate_about_withheld_context
+
+    on_violation: halt_and_return_declared_boundary
+
+    audit:
+      violation_logging_required: true
+      audit_trace_required: true
+
+trace_governance:
+  annotation_method: creator_declared
+  consent_scope: creator_review
+  review_status: draft
+  human_final_edit: true
+
+  provenance_references:
+    - "spec/consciousness-circle-metadata-specification-v0.2.yaml"
+    - "docs/proto-friction-layer.md"
+    - "docs/circle-structure-model.md"
+    - "docs/sovereignty-control-model.md"
+
+  reviewer_notes: "This example demonstrates how a silence node can be declared as an intentional creator boundary rather than missing data."
+
+privacy_and_consent:
+  private_fields:
+    - circle.initial_friction.shadow_friction
+    - circle.initial_friction.silence_node
+    - circle.silence_node
+    - circle.meaning_boundary.restricted_interpretations
+    - trace_governance.reviewer_notes
+
+  public_fields:
+    - content_identity.title
+    - circle.core_question
+    - circle.initial_friction.public_friction_label
+    - circle.meaning_structure.central_claim
+    - circle.meaning_structure.key_concepts
+
+  redaction_required: true
+  creator_approval_required_for_public_use: true
+
+rag_usage_policy:
+  rag_indexing_allowed: true
+  rag_summary_allowed: false
+
+  allowed_rag_fields:
+    - content_identity.title
+    - circle.core_question
+    - circle.initial_friction.public_friction_label
+    - circle.meaning_structure.central_claim
+    - circle.meaning_structure.key_concepts
+    - circle.visibility_scope
+    - circle.sovereignty_control.inference_boundary
+
+  excluded_rag_fields:
+    - circle.initial_friction.shadow_friction
+    - circle.initial_friction.silence_node
+    - circle.silence_node
+    - circle.meaning_boundary.restricted_interpretations
+    - trace_governance.reviewer_notes
+
+  retrieval_notes: "RAG systems may retrieve the public declaration that a silence boundary exists, but must not summarize, speculate about, reconstruct, or infer the withheld context."
+
+royalty_readiness:
+  eligible_for_allocation_review: false
+  requires_human_review: true
+  scoring_method: "not applicable; silence nodes are boundary declarations, not allocation evidence"
+  allocation_notes: "This example is for creator-boundary preservation only and must not be used as an allocation, ownership, or depth-score signal."
+  anti_gaming_flags:
+    - privacy_sensitive_claim
+    - unreviewed_ai_inference
+    - unclear_origin_pressure
