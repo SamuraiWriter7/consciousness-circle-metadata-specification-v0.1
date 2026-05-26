@@ -1,0 +1,1004 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/consciousness-circle-metadata-v0.2.schema.json",
+  "title": "Consciousness Circle Metadata v0.2",
+  "description": "Draft JSON Schema for Consciousness Circle Metadata v0.2. This schema validates the proposed v0.2 object model for question-centered, friction-aware, creator-controlled metadata in AI-mediated knowledge ecosystems.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "content_identity",
+    "circle",
+    "trace_governance"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.2.0"
+    },
+    "content_identity": {
+      "$ref": "#/$defs/contentIdentity"
+    },
+    "circle": {
+      "$ref": "#/$defs/circle"
+    },
+    "trace_governance": {
+      "$ref": "#/$defs/traceGovernance"
+    },
+    "privacy_and_consent": {
+      "$ref": "#/$defs/privacyAndConsent"
+    },
+    "rag_usage_policy": {
+      "$ref": "#/$defs/ragUsagePolicy"
+    },
+    "royalty_readiness": {
+      "$ref": "#/$defs/royaltyReadiness"
+    },
+    "review_state": {
+      "$ref": "#/$defs/reviewState"
+    },
+    "external_references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "implementation_notes": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "contentType": {
+      "type": "string",
+      "enum": [
+        "article",
+        "essay",
+        "note",
+        "repository_document",
+        "book_section",
+        "social_post",
+        "specification",
+        "dataset_description",
+        "code_repository",
+        "other"
+      ]
+    },
+    "annotationMethod": {
+      "type": "string",
+      "enum": [
+        "creator_declared",
+        "creator_reviewed_ai_assisted",
+        "human_reviewer",
+        "multi_wing_review",
+        "ai_inferred_unreviewed"
+      ]
+    },
+    "reviewStatus": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "reviewed",
+        "creator_approved",
+        "disputed",
+        "withdrawn",
+        "archived"
+      ]
+    },
+    "consentScope": {
+      "type": "string",
+      "enum": [
+        "private",
+        "local_use_only",
+        "creator_review",
+        "rag_reference",
+        "public_reference",
+        "trace_reference",
+        "allocation_review",
+        "unrestricted_public"
+      ]
+    },
+    "frictionType": {
+      "type": "string",
+      "enum": [
+        "bodily_friction",
+        "daily_life_friction",
+        "social_friction",
+        "cognitive_dissonance",
+        "ethical_conflict",
+        "raw_unresolved_friction",
+        "other"
+      ]
+    },
+    "frictionState": {
+      "type": "string",
+      "enum": [
+        "emerging",
+        "active",
+        "structured",
+        "resolved",
+        "unresolved",
+        "transformed",
+        "withdrawn"
+      ]
+    },
+    "protoState": {
+      "type": "string",
+      "enum": [
+        "emerging",
+        "recurring",
+        "unstable",
+        "pressurized",
+        "partially_articulated",
+        "deferred",
+        "withdrawn"
+      ]
+    },
+    "articulationLevel": {
+      "type": "string",
+      "enum": [
+        "pre_verbal",
+        "image_based",
+        "gesture_based",
+        "fragmentary",
+        "partial_sentence",
+        "draft_question",
+        "structured_friction"
+      ]
+    },
+    "disclosureLevel": {
+      "type": "string",
+      "enum": [
+        "public",
+        "abstract_public",
+        "ai_read",
+        "ai_summary_only",
+        "private",
+        "encrypted",
+        "silent"
+      ]
+    },
+    "visibilityScopeValue": {
+      "type": "string",
+      "enum": [
+        "public",
+        "abstract_public",
+        "ai_read",
+        "ai_summary_only",
+        "private",
+        "encrypted",
+        "silent"
+      ]
+    },
+    "circleOpenness": {
+      "type": "string",
+      "enum": [
+        "open",
+        "semi_open",
+        "closed",
+        "sealed"
+      ]
+    },
+    "circleLifecycleState": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "revised",
+        "superseded",
+        "withdrawn",
+        "archived",
+        "sealed"
+      ]
+    },
+    "subCircleDependencyType": {
+      "type": "string",
+      "enum": [
+        "derives_from",
+        "supports",
+        "contrasts_with",
+        "extends",
+        "refines",
+        "protects",
+        "questions",
+        "supersedes"
+      ]
+    },
+    "evolutionType": {
+      "type": "string",
+      "enum": [
+        "origin",
+        "revision",
+        "expansion",
+        "correction",
+        "reflection",
+        "transformation",
+        "supersession",
+        "withdrawal"
+      ]
+    },
+    "sovereigntyAccessLayer": {
+      "type": "string",
+      "enum": [
+        "core",
+        "inner",
+        "outer"
+      ]
+    },
+    "derivationRestriction": {
+      "type": "string",
+      "enum": [
+        "none",
+        "soft",
+        "moderate",
+        "strict"
+      ]
+    },
+    "inferenceBoundary": {
+      "type": "string",
+      "enum": [
+        "free_inference",
+        "limited_inference",
+        "no_private_inference",
+        "no_inference"
+      ]
+    },
+    "violationBehavior": {
+      "type": "string",
+      "enum": [
+        "warn",
+        "halt",
+        "return_original_structure",
+        "halt_and_return_original_structure",
+        "log_violation",
+        "halt_and_return_declared_boundary"
+      ]
+    },
+    "silenceReasonType": {
+      "type": "string",
+      "enum": [
+        "creator_boundary",
+        "privacy",
+        "unresolved_friction",
+        "ethical_risk",
+        "emotional_risk",
+        "context_not_ready",
+        "future_revision",
+        "sealed_origin"
+      ]
+    },
+    "vibrationSignalType": {
+      "type": "string",
+      "enum": [
+        "recurring_discomfort",
+        "bodily_signal",
+        "ethical_pressure",
+        "conceptual_gap",
+        "social_resistance",
+        "creative_pull",
+        "silence_pressure",
+        "unclassified_signal"
+      ]
+    },
+    "antiGamingFlag": {
+      "type": "string",
+      "enum": [
+        "score_inflation",
+        "low_confidence_high_depth",
+        "missing_sources",
+        "unreviewed_ai_inference",
+        "privacy_sensitive_claim",
+        "contradictory_metadata",
+        "excessive_self_claim",
+        "unclear_origin_pressure",
+        "other"
+      ]
+    },
+    "contentIdentity": {
+      "type": "object",
+      "required": [
+        "content_id",
+        "content_type",
+        "title"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "content_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content_type": {
+          "$ref": "#/$defs/contentType"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "creator_id": {
+          "type": "string"
+        },
+        "canonical_uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "language": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "circle": {
+      "type": "object",
+      "required": [
+        "circle_id",
+        "circle_version",
+        "core_question",
+        "initial_friction",
+        "visibility_scope"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "circle_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "circle_version": {
+          "type": "string",
+          "const": "0.2"
+        },
+        "circle_lifecycle": {
+          "$ref": "#/$defs/circleLifecycle"
+        },
+        "circle_state": {
+          "$ref": "#/$defs/circleState"
+        },
+        "proto_friction": {
+          "$ref": "#/$defs/protoFriction"
+        },
+        "initial_friction": {
+          "$ref": "#/$defs/initialFriction"
+        },
+        "core_question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "meaning_structure": {
+          "$ref": "#/$defs/meaningStructure"
+        },
+        "meaning_boundary": {
+          "$ref": "#/$defs/meaningBoundary"
+        },
+        "visibility_scope": {
+          "$ref": "#/$defs/visibilityScope"
+        },
+        "circle_layers": {
+          "$ref": "#/$defs/circleLayers"
+        },
+        "sovereignty_control": {
+          "$ref": "#/$defs/sovereigntyControl"
+        },
+        "temporal_relationship": {
+          "$ref": "#/$defs/temporalRelationship"
+        },
+        "sub_circles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/subCircle"
+          }
+        }
+      }
+    },
+    "circleLifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "$ref": "#/$defs/circleLifecycleState"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "revised_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "superseded_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "circleState": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "openness": {
+          "$ref": "#/$defs/circleOpenness"
+        },
+        "interpretation_allowed": {
+          "type": "boolean"
+        },
+        "derivation_allowed": {
+          "type": "boolean"
+        },
+        "inference_boundary": {
+          "$ref": "#/$defs/inferenceBoundary"
+        }
+      }
+    },
+    "protoFriction": {
+      "type": "object",
+      "required": [
+        "present"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "present": {
+          "type": "boolean"
+        },
+        "proto_friction_id": {
+          "type": "string"
+        },
+        "proto_state": {
+          "$ref": "#/$defs/protoState"
+        },
+        "articulation_level": {
+          "$ref": "#/$defs/articulationLevel"
+        },
+        "disclosure_level": {
+          "$ref": "#/$defs/disclosureLevel",
+          "default": "private"
+        },
+        "ai_inference_allowed": {
+          "type": "boolean",
+          "default": false
+        },
+        "vibration_log": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/vibrationLogEntry"
+          }
+        },
+        "shadow_friction": {
+          "$ref": "#/$defs/shadowFriction"
+        },
+        "silence_node": {
+          "$ref": "#/$defs/silenceNode"
+        },
+        "proto_friction_control": {
+          "$ref": "#/$defs/protoFrictionControl"
+        }
+      }
+    },
+    "vibrationLogEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "vibration_id": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "signal_type": {
+          "$ref": "#/$defs/vibrationSignalType"
+        },
+        "articulation_level": {
+          "$ref": "#/$defs/articulationLevel"
+        },
+        "note": {
+          "type": "string"
+        },
+        "ai_inference_allowed": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "shadowFriction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "present": {
+          "type": "boolean"
+        },
+        "disclosure_level": {
+          "$ref": "#/$defs/disclosureLevel",
+          "default": "private"
+        },
+        "reason_type": {
+          "$ref": "#/$defs/silenceReasonType"
+        },
+        "ai_inference_allowed": {
+          "type": "boolean",
+          "default": false
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "silenceNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "present": {
+          "type": "boolean"
+        },
+        "reason_type": {
+          "$ref": "#/$defs/silenceReasonType"
+        },
+        "ai_inference_allowed": {
+          "type": "boolean",
+          "default": false
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "protoFrictionControl": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "summarization_allowed": {
+          "type": "boolean",
+          "default": false
+        },
+        "transformation_allowed": {
+          "type": "boolean",
+          "default": false
+        },
+        "reconstruction_allowed": {
+          "type": "boolean",
+          "default": false
+        },
+        "on_violation": {
+          "$ref": "#/$defs/violationBehavior"
+        }
+      }
+    },
+    "initialFriction": {
+      "type": "object",
+      "required": [
+        "primary_friction_type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "primary_friction_type": {
+          "$ref": "#/$defs/frictionType"
+        },
+        "secondary_friction_types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/frictionType"
+          }
+        },
+        "friction_intensity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "friction_state": {
+          "$ref": "#/$defs/frictionState"
+        },
+        "disclosure_level": {
+          "$ref": "#/$defs/disclosureLevel",
+          "default": "abstract_public"
+        },
+        "public_friction_label": {
+          "type": "string"
+        },
+        "friction_raw": {
+          "type": "string"
+        },
+        "friction_unresolved": {
+          "type": "boolean"
+        },
+        "friction_timeline": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/frictionTimelineEntry"
+          }
+        },
+        "shadow_friction": {
+          "$ref": "#/$defs/shadowFriction"
+        },
+        "silence_node": {
+          "$ref": "#/$defs/silenceNode"
+        }
+      }
+    },
+    "frictionTimelineEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "event_type": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "meaningStructure": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "central_claim": {
+          "type": "string"
+        },
+        "key_concepts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "intended_scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "excluded_interpretations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "interpretation_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "meaningBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "allowed_interpretations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "restricted_interpretations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ai_inference_allowed": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "visibilityScope": {
+      "type": "object",
+      "required": [
+        "circle"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "circle": {
+          "$ref": "#/$defs/visibilityScopeValue"
+        },
+        "core_question": {
+          "$ref": "#/$defs/visibilityScopeValue"
+        },
+        "initial_friction": {
+          "$ref": "#/$defs/visibilityScopeValue"
+        },
+        "raw_friction": {
+          "$ref": "#/$defs/visibilityScopeValue"
+        },
+        "proto_friction": {
+          "$ref": "#/$defs/visibilityScopeValue"
+        },
+        "shadow_friction": {
+          "$ref": "#/$defs/visibilityScopeValue"
+        },
+        "silence_node": {
+          "$ref": "#/$defs/visibilityScopeValue"
+        },
+        "meaning_structure": {
+          "$ref": "#/$defs/visibilityScopeValue"
+        }
+      }
+    },
+    "circleLayers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "core_layer": {
+          "$ref": "#/$defs/circleLayer"
+        },
+        "inner_layer": {
+          "$ref": "#/$defs/circleLayer"
+        },
+        "outer_layer": {
+          "$ref": "#/$defs/circleLayer"
+        }
+      }
+    },
+    "circleLayer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "default_visibility": {
+          "$ref": "#/$defs/visibilityScopeValue"
+        },
+        "contains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sovereigntyControl": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "control_version": {
+          "type": "string"
+        },
+        "access_layer": {
+          "$ref": "#/$defs/sovereigntyAccessLayer"
+        },
+        "interpretation_allowed": {
+          "type": "boolean"
+        },
+        "summarization_allowed": {
+          "type": "boolean"
+        },
+        "transformation_allowed": {
+          "type": "boolean"
+        },
+        "derivation_restriction": {
+          "$ref": "#/$defs/derivationRestriction"
+        },
+        "inference_boundary": {
+          "$ref": "#/$defs/inferenceBoundary"
+        },
+        "allowed_operations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "prohibited_operations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "on_violation": {
+          "$ref": "#/$defs/violationBehavior"
+        },
+        "audit": {
+          "$ref": "#/$defs/auditControl"
+        }
+      }
+    },
+    "auditControl": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "violation_logging_required": {
+          "type": "boolean"
+        },
+        "audit_trace_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "temporalRelationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "parent_circle_id": {
+          "type": "string"
+        },
+        "previous_version": {
+          "type": "string"
+        },
+        "current_version": {
+          "type": "string"
+        },
+        "evolution_type": {
+          "$ref": "#/$defs/evolutionType"
+        },
+        "continuity_note": {
+          "type": "string"
+        }
+      }
+    },
+    "subCircle": {
+      "type": "object",
+      "required": [
+        "circle_id",
+        "core_question"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "circle_id": {
+          "type": "string"
+        },
+        "core_question": {
+          "type": "string"
+        },
+        "dependency_type": {
+          "$ref": "#/$defs/subCircleDependencyType"
+        },
+        "visibility_scope": {
+          "$ref": "#/$defs/visibilityScopeValue"
+        },
+        "sovereignty_control": {
+          "$ref": "#/$defs/sovereigntyControl"
+        }
+      }
+    },
+    "traceGovernance": {
+      "type": "object",
+      "required": [
+        "annotation_method",
+        "consent_scope",
+        "review_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "annotation_method": {
+          "$ref": "#/$defs/annotationMethod"
+        },
+        "consent_scope": {
+          "$ref": "#/$defs/consentScope"
+        },
+        "review_status": {
+          "$ref": "#/$defs/reviewStatus"
+        },
+        "human_final_edit": {
+          "type": "boolean",
+          "default": true
+        },
+        "provenance_references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "reviewer_notes": {
+          "type": "string"
+        }
+      }
+    },
+    "privacyAndConsent": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "private_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "public_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "redaction_required": {
+          "type": "boolean",
+          "default": false
+        },
+        "creator_approval_required_for_public_use": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "ragUsagePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "rag_indexing_allowed": {
+          "type": "boolean",
+          "default": false
+        },
+        "rag_summary_allowed": {
+          "type": "boolean",
+          "default": false
+        },
+        "allowed_rag_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "excluded_rag_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "retrieval_notes": {
+          "type": "string"
+        }
+      }
+    },
+    "royaltyReadiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "eligible_for_allocation_review": {
+          "type": "boolean",
+          "default": false
+        },
+        "requires_human_review": {
+          "type": "boolean",
+          "default": true
+        },
+        "depth_signal_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "scoring_method": {
+          "type": "string"
+        },
+        "allocation_notes": {
+          "type": "string"
+        },
+        "anti_gaming_flags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/antiGamingFlag"
+          }
+        }
+      }
+    },
+    "reviewState": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "review_status": {
+          "$ref": "#/$defs/reviewStatus"
+        },
+        "reviewed_by": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "review_notes": {
+          "type": "string"
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}
