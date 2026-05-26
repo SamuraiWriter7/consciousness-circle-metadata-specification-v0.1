@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this specification, schema, or related documentation, please cite it as below."
 title: "Consciousness Circle Metadata Specification"
-version: "0.1.1"
-date-released: "2026-05-25"
+version: "0.1.2"
+date-released: "2026-05-26"
 type: software
 authors:
   - given-names: "Shidenkai"
