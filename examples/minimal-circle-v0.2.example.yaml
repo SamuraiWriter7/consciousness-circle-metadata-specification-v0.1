@@ -1,0 +1,118 @@
+schema_version: "0.2.0"
+
+content_identity:
+  content_id: "content-2026-001"
+  content_type: article
+  title: "The OS of Questions"
+  creator_id: "creator-example"
+  language: "en"
+  canonical_uri: "https://example.org/the-os-of-questions"
+  created_at: "2026-05-26T00:00:00Z"
+
+circle:
+  circle_id: "circle-2026-001"
+  circle_version: "0.2"
+
+  circle_lifecycle:
+    state: active
+    created_at: "2026-05-26T00:00:00Z"
+
+  core_question: "Who owns the question in the age of AI?"
+
+  initial_friction:
+    primary_friction_type: ethical_conflict
+    secondary_friction_types:
+      - cognitive_dissonance
+      - social_friction
+    friction_state: structured
+    disclosure_level: abstract_public
+    public_friction_label: "ethical discomfort regarding AI interpretation and creator sovereignty"
+    friction_unresolved: true
+
+  meaning_structure:
+    central_claim: "Human-originated questions require creator-defined meaning sovereignty."
+    key_concepts:
+      - question_sovereignty
+      - initial_friction
+      - creator_defined_meaning
+      - semantic_boundary
+    intended_scope:
+      - AI metadata design
+      - creator sovereignty
+      - RAG interpretation
+    excluded_interpretations:
+      - "This framework rejects AI."
+      - "This framework requires disclosure of private friction."
+
+  visibility_scope:
+    circle: ai_read
+    core_question: ai_read
+    initial_friction: abstract_public
+    raw_friction: private
+    proto_friction: private
+    shadow_friction: silent
+    silence_node: silent
+    meaning_structure: ai_read
+
+  sovereignty_control:
+    control_version: "0.1"
+    access_layer: inner
+    interpretation_allowed: true
+    summarization_allowed: false
+    transformation_allowed: false
+    derivation_restriction: strict
+    inference_boundary: no_private_inference
+    allowed_operations:
+      - read_declared_structure
+      - cite_original_structure
+    prohibited_operations:
+      - infer_private_friction
+      - summarize_core_question_without_permission
+      - reconstruct_private_context
+      - diagnose_creator
+    on_violation: halt_and_return_original_structure
+    audit:
+      violation_logging_required: true
+      audit_trace_required: true
+
+trace_governance:
+  annotation_method: creator_declared
+  consent_scope: rag_reference
+  review_status: creator_approved
+  human_final_edit: true
+  provenance_references:
+    - "spec/consciousness-circle-metadata-specification-v0.2.yaml"
+
+privacy_and_consent:
+  private_fields:
+    - initial_friction.friction_raw
+    - proto_friction
+    - shadow_friction
+    - silence_node
+  public_fields:
+    - content_identity.title
+    - circle.core_question
+    - circle.initial_friction.public_friction_label
+    - circle.meaning_structure.central_claim
+  redaction_required: false
+  creator_approval_required_for_public_use: true
+
+rag_usage_policy:
+  rag_indexing_allowed: true
+  rag_summary_allowed: false
+  allowed_rag_fields:
+    - content_identity.title
+    - circle.core_question
+    - circle.initial_friction.public_friction_label
+    - circle.meaning_structure.central_claim
+  excluded_rag_fields:
+    - initial_friction.friction_raw
+    - proto_friction
+    - shadow_friction
+    - silence_node
+  retrieval_notes: "RAG systems may reference the declared structure but should not infer private friction or summarize restricted fields."
+
+royalty_readiness:
+  eligible_for_allocation_review: false
+  requires_human_review: true
+  anti_gaming_flags: []
