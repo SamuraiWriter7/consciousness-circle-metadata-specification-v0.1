@@ -371,15 +371,18 @@
         "meaning_structure": {
           "$ref": "#/$defs/meaningStructure"
         },
-        "meaning_boundary": {
-          "$ref": "#/$defs/meaningBoundary"
-        },
-        "visibility_scope": {
-          "$ref": "#/$defs/visibilityScope"
-        },
-        "circle_layers": {
-          "$ref": "#/$defs/circleLayers"
-        },
+      "meaning_boundary": {
+  "$ref": "#/$defs/meaningBoundary"
+},
+"visibility_scope": {
+  "$ref": "#/$defs/visibilityScope"
+},
+"silence_node": {
+  "$ref": "#/$defs/silenceNode"
+},
+"circle_layers": {
+  "$ref": "#/$defs/circleLayers"
+},
         "sovereignty_control": {
           "$ref": "#/$defs/sovereigntyControl"
         },
